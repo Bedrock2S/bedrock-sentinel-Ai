@@ -93,3 +93,23 @@ Rollback protection confirmed via:
 
 No production data changes performed.
 Next step: MRDS classification / processing phase.
+
+## 2026-03-16 — MRDS_CO Classification Script + Style Confirmed
+
+**Script — classify_mrds.py**
+- Python script classifies MRDS_CO deposit points by commodity, deposit type, and development status
+- Outputs a `category` field written back to `MRDS_CO.gpkg`
+- Classification tiers: Tailings, Industrial/Noise, Uranium, Gemstone, Tier 1 Active/Prospect, Tier 2 Past Producer, Base Metal, Critical Mineral, Unclassified
+- Dependencies: `geopandas`, `fiona`
+- Script run confirmed — category field populated successfully
+- Full script detail in private repo
+
+**Style — MRDS_CO_category.qml**
+- QGIS category style applied to classified deposit layer
+- Downloaded from repo via GitHub Raw view, loaded into QGIS via Layer Properties > Symbology > Load Style
+- Visual QA confirmed — all categories rendering correctly at field navigation scales
+
+Status:
+- Script + style pipeline complete and confirmed production-ready
+- MRDS_CO layer fully classified and styled in project
+- Full QA detail logged in private repo
