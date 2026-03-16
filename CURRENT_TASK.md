@@ -1,17 +1,29 @@
-# CURRENT TASK
-Fix road rendering hierarchy.
+# CURRENT TASK — Mining / Prospecting Layer Rebuild
 
-Known Issues:
-• Major roads visually blending with highways
-• Arterial casing scale inconsistency
-• Multi-layer road rendering conflicts
+## Objective
+Build a new unified mining and prospecting intelligence layer from raw sources.
+Do NOT touch existing QGIS layers until new layer is fully built and validated.
+Once validated, delete old hydro point mining layer and replace with new.
 
-Required Workflow:
-• One change at a time
-• Visual QA in QGIS
-• Log change
-• Commit private repo
-• Update AI summary repo
+## Source Datasets
+1. MRDS.csv + MRDS.met — Raw national USGS MRDS dataset (unclipped, full attributes)
+2. Colorado DRMS — State tailings/reclamation data (not yet acquired)
+3. Additional prospecting/gem sources TBD
+
+## Build Steps
+- [ ] Clip MRDS.csv to Colorado boundary
+- [ ] Acquire Colorado DRMS tailings/reclamation data
+- [ ] Identify and acquire any additional gem/mineral occurrence sources
+- [ ] Merge all sources into single unified GeoPackage layer
+- [ ] Filter and classify features: tailings piles / mines / prospects / gem occurrences / other
+- [ ] Build symbology and scale visibility in QGIS (parallel to existing layer)
+- [ ] Visual QA and validation
+- [ ] Confirm new layer replaces old — delete old hydro point mining layer
+
+## Rule
+Existing QGIS layers remain untouched until new layer passes full validation.
+
+---
 
 # CURRENT TASK — Bedrock Sentinel Cartographic Lock Phase
 
