@@ -68,3 +68,15 @@ Hydrology now reads as a clear temporal and functional hierarchy while maintaini
 
 Status:
 Cartographic tuning continues toward final export lock.
+
+2026-03-15 — Hydro Point System Stabilization
+
+Hydro point labeling behavior refined to improve close-range navigation readability while reducing mid-zoom clutter.
+Spring labels now render only at detailed field scales while symbols remain visible at broader navigation scales.
+
+Investigation confirmed current hydro point dataset is a simplified derivative of original source data and does not contain sufficient attribute detail to properly represent historic mining disturbance features such as tailings piles.
+
+Hydro point symbology and label behavior considered stable for current cartographic lock phase.
+Future project phase planned to rebuild mining intelligence datasets and restore detailed historic mining feature classification.
+
+Current work focus remains on cartographic stabilization and export readiness validation.
