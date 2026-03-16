@@ -42,3 +42,29 @@ No confirmed changes yet
   - Data complete
   - Cartographic tuning still active
   - Re-export required after final lock
+## 2026-03-15 — Hydro Labeling & Visibility Refinement
+
+Hydro line temporal hierarchy styling finalized:
+- Perennial streams dominant solid blue
+- Intermittent streams medium blue short-dash pattern
+- Historical streams blue-grey micro-dash pattern
+- Historical stream visibility limited to ~1:35k and closer to support paleochannel interpretation
+
+Perennial stream labeling system finalized:
+- Curved line placement following channel geometry
+- Repeat distance reduced for improved long-river readability
+- Subtle halo added for terrain overlay legibility
+- Label priority tuned below transport layers
+- Labels begin rendering ~1:100k with optimal readability at field scales
+
+Hydro point labeling behavior refined:
+- Spring labels restricted to close navigation scale (~1:15k)
+- Symbols remain visible at broader field scales (~35k)
+- Duplicate suppression enabled
+- Placement offset tuned for topo readability
+
+Result:
+Hydrology now reads as a clear temporal and functional hierarchy while maintaining base-map transport dominance and field-navigation usability.
+
+Status:
+Cartographic tuning continues toward final export lock.
