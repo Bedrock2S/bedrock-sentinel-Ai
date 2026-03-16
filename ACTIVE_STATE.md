@@ -1,71 +1,27 @@
-# BEDROCK SENTINEL — ACTIVE BUILD STATE
-
-MASTER VERSION: V29 (LOCKED)
-
-Current Focus:
-• Road rendering hierarchy correction
-• Symbology conflict resolution
-• Scale visibility tuning
-
-Rendering Priority Order:
-1 Rendering correctness
-2 Road hierarchy clarity
-3 Garmin compatibility
-4 Performance / scale tuning
-5 Styling refinement
-6 Automation
-
-Authoritative Project Root:
-~/Geospatial/02_Master_GIS/
-
-AI Repo Purpose:
-This repository contains ONLY summarized production state for AI synchronization.
-It is NOT the source of truth.
-
-Source of Truth:
-Private Bedrock Sentinel repository + local Geospatial project.
-
 # ACTIVE STATE — Bedrock Sentinel
 
 Last Updated: 2026-03-15
 
-BUILD PHASE  
-Final Cartographic Tuning / Pre-Export Validation
+BUILD PHASE
+Data correction / cartographic stabilization
 
-DATA STATUS  
-All primary datasets processed and integrated.  
-Layer architecture stable.  
-No further data engineering tasks active.
+CURRENT REALITY
+Cartographic lock is not yet active.
+Current hydro point investigation confirmed the existing mining-related point data is not the correct long-term dataset for historic tailings pile interpretation.
 
-PROJECT FILE  
-~/Geospatial/02_Master_GIS/QGIS_Project/bedrock_sentinel_master_Trim_Amend_.qgz
+CURRENT FOCUS
+- Rebuild / replace mining-related point intelligence for correct historic mining disturbance interpretation
+- Verify whether hydro point mine features should remain as temporary navigation/context data or be reclassified
+- Trails symbology and rendering fine-tuning still required
+- Unit standardization review still required (miles / acres instead of kilometer context)
+- Final export work remains paused
 
-EXPORT STATUS  
-All previously generated exports are considered obsolete due to post-export cartographic adjustments.  
-Export pipeline is intentionally paused.
+KNOWN LIMITATION
+Current hydro point mining-related data is a simplified derivative and does not adequately represent historic tailings piles or full mining disturbance classes.
 
-CURRENT CARTOGRAPHIC CONDITION  
-Transport hierarchy tuned and visually stable.  
-Backcountry road scale prioritization implemented.  
-Hydro temporal hierarchy styling finalized.  
-Historical stream visibility restricted to close navigation scale.  
-Perennial stream labeling system finalized (curved placement / halo / priority tuning).  
-Hydro point labeling behavior finalized (spring labels render ~1:15k).  
+EXPORT STATUS
+All prior exports archived.
+New exports intentionally paused pending data correction and final cartographic lock.
 
-REMAINING CARTOGRAPHIC WORK  
-Hydro point symbol visual hierarchy refinement.  
-Intermittent stream rendering density review.  
-Hillshade blend balance validation.  
-Multi-zoom transport dominance verification.  
-Overlay readability confirmation.  
-Unit standardization review (miles / acres vs kilometer context).  
-Full trails symbology and rendering fine-tuning.
-
-VALIDATION REQUIREMENT  
-Full multi-scale visual QA pass must be completed before export restart.
-
-NEXT STATE TRANSITION  
-Cartographic Lock Declaration → Export Pipeline Reactivation
-
-Hydro point label behavior finalized (spring labels render ~1:15k).  
-Hydro point dataset inspection confirmed current mining-related point data is a simplified derivative and does not adequately represent historic tailings piles or full mining disturbance classes.  
+NEXT STATE TRANSITION
+Mining-related point data decision / rebuild → resume cartographic lock work
