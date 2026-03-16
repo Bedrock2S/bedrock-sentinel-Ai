@@ -1,17 +1,31 @@
-# CURRENT TASK
-Fix road rendering hierarchy.
+# CURRENT TASK — Mining / Prospecting Layer Rebuild
 
-Known Issues:
-• Major roads visually blending with highways
-• Arterial casing scale inconsistency
-• Multi-layer road rendering conflicts
+## Objective
+Build a clean, field-ready mineral intelligence layer from MRDS_CO.
+DRMS dropped — dataset is predominantly coal and construction pit data,
+not relevant to self-guided prospecting.
 
-Required Workflow:
-• One change at a time
-• Visual QA in QGIS
-• Log change
-• Commit private repo
-• Update AI summary repo
+## Source Datasets
+1. MRDS_CO_Edited.gpkg — Colorado-clipped USGS MRDS, category field written, styled
+   Path: ~/Geospatial/03_Processed_Data/Mineral_Intelligence/System_Indicators/MRDS_CO_Edited.gpkg
+2. MRDS raw national — unclipped backup if needed
+   Path: /Volumes/External_Storage/Geospatial/01_Raw_Data/USGS/
+
+## Build Steps
+- [x] Reproject MRDS_CO to project CRS — MRDS_CO_trimmed_26913.gpkg
+- [x] Reproject Ownership_Final_CO to project CRS — Ownership_Final_CO_26913.gpkg
+- [x] All layers unified at EPSG:26913
+- [x] Virtual fields added — Length_mi (lines), Area_acres (polygons)
+- [ ] Set scale visibility (suppress noise at statewide zoom)
+- [ ] Configure labels — Tier 1 site names at close field scale only
+- [ ] Export stripped POI GeoJSON via export_mrds_poi.py
+- [ ] Visual QA and validation
+- [ ] Confirm new layer replaces old — delete old hydro point mining layer
+
+## Rule
+Existing QGIS layers remain untouched until new layer passes full validation.
+
+---
 
 # CURRENT TASK — Bedrock Sentinel Cartographic Lock Phase
 

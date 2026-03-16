@@ -81,19 +81,6 @@ Future project phase planned to rebuild mining intelligence datasets and restore
 
 Current work focus remains on cartographic stabilization and export readiness validation.
 
-### 2026-03-16 — Pre-Run Safety Checkpoint
-
-Project state snapshot completed prior to next processing stage.
-
-Rollback protection confirmed via:
-- Local project snapshot
-- Time Machine backup
-- iCloud sync of critical project files
-- External storage backup
-
-No production data changes performed.
-Next step: MRDS classification / processing phase.
-
 ## 2026-03-16 — MRDS_CO Classification Script + Style Confirmed
 
 **Script — classify_mrds.py**
@@ -113,3 +100,9 @@ Status:
 - Script + style pipeline complete and confirmed production-ready
 - MRDS_CO layer fully classified and styled in project
 - Full QA detail logged in private repo
+
+## 2026-03-16 — DRMS Integration Cancelled
+
+DRMS (Colorado Division of Reclamation, Mining and Safety) not added.
+Dataset assessed as predominantly coal and construction pit data — outside project scope.
+MRDS_CO confirmed as sole mineral intelligence source going forward.
