@@ -1,3 +1,41 @@
+# CURRENT TASK — DRMS Integration
+
+## Objective
+Acquire and integrate Colorado DRMS (Division of Reclamation, Mining and Safety)
+dataset as a second source layer to complement MRDS_CO.
+DRMS is the state-level authoritative source for permitted mines, tailings impoundments,
+and reclamation sites — fills gaps in MRDS coverage, especially for tailings piles.
+
+## Why DRMS
+MRDS_CO classification is complete but MRDS data is federal and not always current
+or complete for active/recent Colorado mining disturbance.
+DRMS is state-managed and more accurately reflects current tailings and reclamation status.
+Together MRDS + DRMS gives the most complete picture for prospecting and field use.
+
+## Steps
+- [ ] Locate and download Colorado DRMS dataset
+      Source: Colorado Division of Reclamation, Mining and Safety
+      URL: https://drms.colorado.gov (check GIS/data downloads section)
+      Look for: permitted mine locations, tailings impoundments, bond/reclamation sites
+- [ ] Review attribute schema — identify fields for name, status, commodity, site type
+- [ ] Clip to Colorado extent if not already state-only
+- [ ] Reproject to match project CRS (match MRDS_CO reprojection step)
+- [ ] Identify overlap / duplicate sites between DRMS and MRDS_CO
+- [ ] Decide merge strategy: unified layer vs separate layers with shared style
+- [ ] Extend classify_mrds.py or build classify_drms.py for DRMS classification
+- [ ] Update MRDS_CO_category.qml or build matching DRMS style
+- [ ] Visual QA both layers together at field navigation scales
+
+## Dependency
+MRDS_CO CRS reproject must be done before or alongside this work so both
+layers are in the same CRS before any merge decision.
+
+## Rule
+Do not replace or remove MRDS_CO layer until DRMS integration is validated.
+Both layers run in parallel during build phase.
+
+---
+
 # CURRENT TASK — Mining / Prospecting Layer Rebuild
 
 ## Objective
