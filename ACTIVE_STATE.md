@@ -66,3 +66,6 @@ Full multi-scale visual QA pass must be completed before export restart.
 
 NEXT STATE TRANSITION  
 Cartographic Lock Declaration → Export Pipeline Reactivation
+
+Hydro point label behavior finalized (spring labels render ~1:15k).  
+Hydro point dataset inspection confirmed current mining-related point data is a simplified derivative and does not adequately represent historic tailings piles or full mining disturbance classes.  
