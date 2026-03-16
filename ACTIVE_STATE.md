@@ -8,30 +8,30 @@ Data correction / cartographic stabilization
 
 CURRENT REALITY
 Cartographic lock is not yet active.
-MRDS_CO_Edited.gpkg classification pipeline is complete and confirmed in QGIS.
-Mining intelligence layer now has a working classified and styled dataset.
-Remaining blockers before export lock are CRS standardization, scale visibility, and labels.
+MRDS_CO classification pipeline complete. All project layers now standardized to EPSG:26913.
+Virtual fields (Length_mi, Area_acres) added to all line and polygon layers.
 
 COMPLETED THIS SESSION
 - classify_mrds.py written and run — 'category' field written to MRDS_CO.gpkg
 - MRDS_CO_category.qml style built and confirmed rendering in QGIS
 - All 15 classification tiers visually confirmed at field navigation scales
 - Full pipeline documentation written to private repo
+- MRDS_CO_trimmed reprojected → MRDS_CO_trimmed_26913.gpkg (EPSG:26913)
+- Ownership_Final_CO reprojected → Ownership_Final_CO_26913.gpkg (EPSG:26913)
+- All project layers now unified at EPSG:26913
+- Virtual fields added: Length_mi (all line layers), Area_acres (all polygon layers)
 
 CURRENT FOCUS
-- MRDS_CO CRS standardization — layer is currently WGS 84 (EPSG:4326), needs
-  reprojection to match project CRS before export lock
 - MRDS_CO scale visibility — not yet set, will be noisy at state-wide zoom
 - MRDS_CO labels — not yet configured (Tier 1 features at close scale, optional)
 - DRMS merge — DROPPED. Dataset is predominantly coal and construction pit data.
 - Trails symbology and rendering fine-tuning still required
-- Unit standardization review still required (miles / acres instead of km context)
 - Final export work remains paused
 
 LAYER STATUS — MRDS_CO
 Script:          Complete — category field written to disk
 Style:           Complete — confirmed rendering in QGIS
-CRS:             NOT standardized — action required before export lock
+CRS:             STANDARDIZED — EPSG:26913 (MRDS_CO_trimmed_26913.gpkg)
 Scale visibility: NOT configured
 Labels:          NOT configured
 DRMS merge:      DROPPED

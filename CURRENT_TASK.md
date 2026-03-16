@@ -12,7 +12,10 @@ not relevant to self-guided prospecting.
    Path: /Volumes/External_Storage/Geospatial/01_Raw_Data/USGS/
 
 ## Build Steps
-- [ ] Reproject MRDS_CO to project CRS
+- [x] Reproject MRDS_CO to project CRS — MRDS_CO_trimmed_26913.gpkg
+- [x] Reproject Ownership_Final_CO to project CRS — Ownership_Final_CO_26913.gpkg
+- [x] All layers unified at EPSG:26913
+- [x] Virtual fields added — Length_mi (lines), Area_acres (polygons)
 - [ ] Set scale visibility (suppress noise at statewide zoom)
 - [ ] Configure labels — Tier 1 site names at close field scale only
 - [ ] Export stripped POI GeoJSON via export_mrds_poi.py
