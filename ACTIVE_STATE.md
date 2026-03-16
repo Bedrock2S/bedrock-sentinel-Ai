@@ -10,8 +10,7 @@ CURRENT REALITY
 Cartographic lock is not yet active.
 MRDS_CO classification pipeline is complete and confirmed in QGIS.
 Mining intelligence layer now has a working classified and styled dataset.
-Remaining blockers before export lock are CRS standardization, scale visibility,
-and the DRMS merge decision.
+Remaining blockers before export lock are CRS standardization, scale visibility, and labels.
 
 COMPLETED THIS SESSION
 - classify_mrds.py written and run — 'category' field written to MRDS_CO.gpkg

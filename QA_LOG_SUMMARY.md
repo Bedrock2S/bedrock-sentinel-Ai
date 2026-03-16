@@ -100,3 +100,9 @@ Status:
 - Script + style pipeline complete and confirmed production-ready
 - MRDS_CO layer fully classified and styled in project
 - Full QA detail logged in private repo
+
+## 2026-03-16 — DRMS Integration Cancelled
+
+DRMS (Colorado Division of Reclamation, Mining and Safety) not added.
+Dataset assessed as predominantly coal and construction pit data — outside project scope.
+MRDS_CO confirmed as sole mineral intelligence source going forward.
