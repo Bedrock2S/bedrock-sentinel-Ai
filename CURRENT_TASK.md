@@ -6,11 +6,19 @@ dataset as a second source layer to complement MRDS_CO.
 DRMS is the state-level authoritative source for permitted mines, tailings impoundments,
 and reclamation sites — fills gaps in MRDS coverage, especially for tailings piles.
 
-## Why DRMS
-MRDS_CO classification is complete but MRDS data is federal and not always current
-or complete for active/recent Colorado mining disturbance.
-DRMS is state-managed and more accurately reflects current tailings and reclamation status.
-Together MRDS + DRMS gives the most complete picture for prospecting and field use.
+## Why Both Layers
+MRDS_CO is federal — historic mines, prospects, occurrences, gem fields, old workings
+going back decades. DRMS is state — current permitted operations, active tailings
+impoundments, reclamation bonds. Neither alone is complete.
+
+Both layers will remain in the final project as separate permanent layers.
+They are not merged. They cover different things.
+
+  MRDS_CO  — historic and federal record
+  DRMS     — current state-permitted and reclamation record
+
+Together they give the most complete mineral intelligence picture for prospecting
+and field navigation use.
 
 ## Steps
 - [ ] Locate and download Colorado DRMS dataset
@@ -20,19 +28,18 @@ Together MRDS + DRMS gives the most complete picture for prospecting and field u
 - [ ] Review attribute schema — identify fields for name, status, commodity, site type
 - [ ] Clip to Colorado extent if not already state-only
 - [ ] Reproject to match project CRS (match MRDS_CO reprojection step)
-- [ ] Identify overlap / duplicate sites between DRMS and MRDS_CO
-- [ ] Decide merge strategy: unified layer vs separate layers with shared style
-- [ ] Extend classify_mrds.py or build classify_drms.py for DRMS classification
-- [ ] Update MRDS_CO_category.qml or build matching DRMS style
+- [ ] Build classify_drms.py — separate classification script for DRMS attributes
+- [ ] Build DRMS_category.qml — matching style, consistent visual language with MRDS
 - [ ] Visual QA both layers together at field navigation scales
+- [ ] Set scale visibility on both layers
+- [ ] Configure labels on both layers (site name, Tier 1 features at close scale)
 
 ## Dependency
 MRDS_CO CRS reproject must be done before or alongside this work so both
-layers are in the same CRS before any merge decision.
+layers are in the same CRS.
 
 ## Rule
-Do not replace or remove MRDS_CO layer until DRMS integration is validated.
-Both layers run in parallel during build phase.
+MRDS_CO stays. DRMS adds to it. Neither replaces the other.
 
 ---
 
