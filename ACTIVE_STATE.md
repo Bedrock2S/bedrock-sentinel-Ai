@@ -1,6 +1,6 @@
 # ACTIVE STATE — Bedrock Sentinel
 
-Last Updated: 2026-03-15
+Last Updated: 2026-03-16
 
 BUILD PHASE
 Data correction / cartographic stabilization
@@ -15,6 +15,10 @@ CURRENT FOCUS
 - Trails symbology and rendering fine-tuning still required
 - Unit standardization review still required (miles / acres instead of kilometer context)
 - Final export work remains paused
+
+SOURCE DATASET — MINING POINT REBUILD
+~/Geospatial/03_Processed_Data/Hydro/Colorado_Hydro_Points.gpkg
+This is the authoritative source for the mining-related point layer rebuild.
 
 KNOWN LIMITATION
 Current hydro point mining-related data is a simplified derivative and does not adequately represent historic tailings piles or full mining disturbance classes.
