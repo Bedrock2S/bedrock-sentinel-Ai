@@ -7,36 +7,48 @@ Data correction / cartographic stabilization
 
 CURRENT REALITY
 Cartographic lock is not yet active.
-Current hydro point investigation confirmed the existing mining-related point data is not the correct long-term dataset for historic tailings pile interpretation.
+MRDS_CO classification pipeline is complete and confirmed in QGIS.
+Mining intelligence layer now has a working classified and styled dataset.
+Remaining blockers before export lock are CRS standardization, scale visibility,
+and the DRMS merge decision.
+
+COMPLETED THIS SESSION
+- classify_mrds.py written and run — 'category' field written to MRDS_CO.gpkg
+- MRDS_CO_category.qml style built and confirmed rendering in QGIS
+- All 15 classification tiers visually confirmed at field navigation scales
+- Full pipeline documentation written to private repo
 
 CURRENT FOCUS
-- Rebuild / replace mining-related point intelligence for correct historic mining disturbance interpretation
-- Verify whether hydro point mine features should remain as temporary navigation/context data or be reclassified
+- MRDS_CO CRS standardization — layer is currently WGS 84 (EPSG:4326), needs
+  reprojection to match project CRS before export lock
+- MRDS_CO scale visibility — not yet set, will be noisy at state-wide zoom
+- MRDS_CO labels — not yet configured (Tier 1 features at close scale, optional)
+- DRMS merge — Colorado Division of Reclamation, Mining and Safety dataset not
+  yet integrated; planned as second source to complement MRDS
 - Trails symbology and rendering fine-tuning still required
-- Unit standardization review still required (miles / acres instead of kilometer context)
+- Unit standardization review still required (miles / acres instead of km context)
 - Final export work remains paused
 
-SOURCE DATASET — MINING POINT REBUILD
-~/Geospatial/03_Processed_Data/Hydro/Colorado_Hydro_Points.gpkg
-This is the authoritative source for the mining-related point layer rebuild.
-
-LAYER INTENT — MINING / PROSPECTING INTELLIGENCE
-Primary objective: Historic tailings piles — most critical feature class for this layer.
-Secondary: Active and historic mine locations — retain and display.
-Additional targets: Any features relevant to prospecting and gem/mineral finding, including but not limited to:
-- Prospect pits
-- Adits / shafts
-- Dumps / waste piles
-- Mineral occurrence points
-- Historic claims or workings
-These features collectively support backcountry prospecting and gem finding use cases.
+LAYER STATUS — MRDS_CO
+Script:          Complete — category field written to disk
+Style:           Complete — confirmed rendering in QGIS
+CRS:             NOT standardized — action required before export lock
+Scale visibility: NOT configured
+Labels:          NOT configured
+DRMS merge:      NOT started
 
 KNOWN LIMITATION
-Current hydro point mining-related data is a simplified derivative and does not adequately represent historic tailings piles or full mining disturbance classes.
+Hydro point mining-related data is a simplified derivative and does not adequately
+represent historic tailings piles or full mining disturbance classes.
+MRDS_CO is now the primary mining intelligence layer.
+Hydro point mine features remain in project as temporary context data pending
+DRMS merge decision.
 
 EXPORT STATUS
 All prior exports archived.
-New exports intentionally paused pending data correction and final cartographic lock.
+New exports intentionally paused pending CRS correction, data finalization,
+and final cartographic lock.
 
 NEXT STATE TRANSITION
-Mining-related point data decision / rebuild → resume cartographic lock work
+MRDS_CO CRS reproject → scale visibility set → DRMS merge decision
+→ resume cartographic lock → export
