@@ -20,6 +20,17 @@ SOURCE DATASET — MINING POINT REBUILD
 ~/Geospatial/03_Processed_Data/Hydro/Colorado_Hydro_Points.gpkg
 This is the authoritative source for the mining-related point layer rebuild.
 
+LAYER INTENT — MINING / PROSPECTING INTELLIGENCE
+Primary objective: Historic tailings piles — most critical feature class for this layer.
+Secondary: Active and historic mine locations — retain and display.
+Additional targets: Any features relevant to prospecting and gem/mineral finding, including but not limited to:
+- Prospect pits
+- Adits / shafts
+- Dumps / waste piles
+- Mineral occurrence points
+- Historic claims or workings
+These features collectively support backcountry prospecting and gem finding use cases.
+
 KNOWN LIMITATION
 Current hydro point mining-related data is a simplified derivative and does not adequately represent historic tailings piles or full mining disturbance classes.
 
