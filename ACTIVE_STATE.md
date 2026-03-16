@@ -50,4 +50,4 @@ and final cartographic lock.
 
 NEXT STATE TRANSITION
 MRDS_CO CRS reproject → scale visibility set → labels configured
-→ POI export validated → resume cartographic lock → export
+→ MRDS_CO_trimmed.gpkg validated → resume cartographic lock → export
