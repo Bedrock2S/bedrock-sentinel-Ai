@@ -2,25 +2,19 @@
 
 ## Objective
 Acquire and integrate Colorado DRMS (Division of Reclamation, Mining and Safety)
-dataset as a second source layer to complement MRDS_CO.
-DRMS is the state-level authoritative source for permitted mines, tailings impoundments,
-and reclamation sites — fills gaps in MRDS coverage, especially for tailings piles.
+data, validate it alongside MRDS_CO, then merge both into a single unified
+mineral intelligence layer for the final project.
 
-## Why Both Layers
+End goal: one layer, one style, complete coverage from both federal and state sources.
+
+## Why Both Sources
 MRDS_CO is federal — historic mines, prospects, occurrences, gem fields, old workings
 going back decades. DRMS is state — current permitted operations, active tailings
-impoundments, reclamation bonds. Neither alone is complete.
+impoundments, reclamation bonds. Neither alone is complete. Together they are.
 
-Both layers will remain in the final project as separate permanent layers.
-They are not merged. They cover different things.
+## Build Phases
 
-  MRDS_CO  — historic and federal record
-  DRMS     — current state-permitted and reclamation record
-
-Together they give the most complete mineral intelligence picture for prospecting
-and field navigation use.
-
-## Steps
+### Phase 1 — Acquire and prep DRMS
 - [ ] Locate and download Colorado DRMS dataset
       Source: Colorado Division of Reclamation, Mining and Safety
       URL: https://drms.colorado.gov (check GIS/data downloads section)
@@ -28,18 +22,31 @@ and field navigation use.
 - [ ] Review attribute schema — identify fields for name, status, commodity, site type
 - [ ] Clip to Colorado extent if not already state-only
 - [ ] Reproject to match project CRS (match MRDS_CO reprojection step)
-- [ ] Build classify_drms.py — separate classification script for DRMS attributes
-- [ ] Build DRMS_category.qml — matching style, consistent visual language with MRDS
-- [ ] Visual QA both layers together at field navigation scales
-- [ ] Set scale visibility on both layers
-- [ ] Configure labels on both layers (site name, Tier 1 features at close scale)
+
+### Phase 2 — Classify and QA individually
+- [ ] Build classify_drms.py — classification script matched to DRMS attributes
+- [ ] QA MRDS_CO and DRMS separately at field navigation scales
+- [ ] Confirm both layers are clean and correctly classified before merge
+
+### Phase 3 — Merge into unified layer
+- [ ] Merge MRDS_CO + DRMS into single GeoPackage — CO_Mineral_Intelligence.gpkg
+- [ ] Run deduplication pass — remove or flag sites that exist in both datasets
+- [ ] Build unified classification covering all categories from both sources
+- [ ] Build single unified style — CO_Mineral_Intelligence_category.qml
+- [ ] Replace both individual layers in QGIS with the single merged layer
+
+### Phase 4 — Final QA and lock
+- [ ] Visual QA unified layer at all navigation scales
+- [ ] Set scale visibility
+- [ ] Configure labels (site name, Tier 1 features at close scale)
+- [ ] Confirm layer is export-ready
 
 ## Dependency
-MRDS_CO CRS reproject must be done before or alongside this work so both
-layers are in the same CRS.
+MRDS_CO CRS reproject must be done before merge phase.
 
 ## Rule
-MRDS_CO stays. DRMS adds to it. Neither replaces the other.
+Both individual layers run in parallel during build phases.
+Neither is removed until the unified merged layer passes full validation.
 
 ---
 
