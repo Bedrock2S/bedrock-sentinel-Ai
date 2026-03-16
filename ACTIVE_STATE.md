@@ -1,6 +1,7 @@
 # ACTIVE STATE — Bedrock Sentinel
 
 Last Updated: 2026-03-16
+DRMS: DROPPED — predominantly coal and construction pit data, not relevant to prospecting
 
 BUILD PHASE
 Data correction / cartographic stabilization
@@ -23,8 +24,7 @@ CURRENT FOCUS
   reprojection to match project CRS before export lock
 - MRDS_CO scale visibility — not yet set, will be noisy at state-wide zoom
 - MRDS_CO labels — not yet configured (Tier 1 features at close scale, optional)
-- DRMS merge — Colorado Division of Reclamation, Mining and Safety dataset not
-  yet integrated; planned as second source to complement MRDS
+- DRMS merge — DROPPED. Dataset is predominantly coal and construction pit data.
 - Trails symbology and rendering fine-tuning still required
 - Unit standardization review still required (miles / acres instead of km context)
 - Final export work remains paused
@@ -35,14 +35,14 @@ Style:           Complete — confirmed rendering in QGIS
 CRS:             NOT standardized — action required before export lock
 Scale visibility: NOT configured
 Labels:          NOT configured
-DRMS merge:      NOT started
+DRMS merge:      DROPPED
 
 KNOWN LIMITATION
 Hydro point mining-related data is a simplified derivative and does not adequately
 represent historic tailings piles or full mining disturbance classes.
 MRDS_CO is now the primary mining intelligence layer.
 Hydro point mine features remain in project as temporary context data pending
-DRMS merge decision.
+final MRDS_CO validation.
 
 EXPORT STATUS
 All prior exports archived.
@@ -50,5 +50,5 @@ New exports intentionally paused pending CRS correction, data finalization,
 and final cartographic lock.
 
 NEXT STATE TRANSITION
-MRDS_CO CRS reproject → scale visibility set → DRMS merge decision
-→ resume cartographic lock → export
+MRDS_CO CRS reproject → scale visibility set → labels configured
+→ POI export validated → resume cartographic lock → export
