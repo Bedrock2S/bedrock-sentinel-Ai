@@ -6,8 +6,8 @@ DRMS dropped — dataset is predominantly coal and construction pit data,
 not relevant to self-guided prospecting.
 
 ## Source Datasets
-1. MRDS_CO — Colorado-clipped USGS MRDS, category field written, styled
-   Path: ~/Geospatial/03_Processed_Data/Mineral_Intelligence/System_Indicators/
+1. MRDS_CO_Edited.gpkg — Colorado-clipped USGS MRDS, category field written, styled
+   Path: ~/Geospatial/03_Processed_Data/Mineral_Intelligence/System_Indicators/MRDS_CO_Edited.gpkg
 2. MRDS raw national — unclipped backup if needed
    Path: /Volumes/External_Storage/Geospatial/01_Raw_Data/USGS/
 
