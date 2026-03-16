@@ -6,12 +6,15 @@ Do NOT touch existing QGIS layers until new layer is fully built and validated.
 Once validated, delete old hydro point mining layer and replace with new.
 
 ## Source Datasets
-1. MRDS.csv + MRDS.met — Raw national USGS MRDS dataset (unclipped, full attributes)
-2. Colorado DRMS — State tailings/reclamation data (not yet acquired)
-3. Additional prospecting/gem sources TBD
+1. MRDS_CO — Colorado-clipped USGS MRDS, full attributes, untouched
+   Path: ~/Geospatial/03_Processed_Data/Mineral_Intelligence/System_Indicators/
+2. MRDS raw national — unclipped backup if needed
+   Path: /Volumes/External_Storage/Geospatial/01_Raw_Data/USGS/
+3. Colorado DRMS — State tailings/reclamation data (not yet acquired)
+4. Additional prospecting/gem sources TBD
 
 ## Build Steps
-- [ ] Clip MRDS.csv to Colorado boundary
+- [ ] Open MRDS_CO in QGIS and audit attribute table (identify tailings, mines, prospects, gem fields)
 - [ ] Acquire Colorado DRMS tailings/reclamation data
 - [ ] Identify and acquire any additional gem/mineral occurrence sources
 - [ ] Merge all sources into single unified GeoPackage layer
