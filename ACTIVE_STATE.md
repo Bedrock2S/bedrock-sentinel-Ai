@@ -1,6 +1,6 @@
 # ACTIVE STATE — Bedrock Sentinel
 
-Last Updated: 2026-03-17 (trail layers locked — hiking only)
+Last Updated: 2026-03-17 (backcountry roads rebuilt — 10 rules → 6, surface-type organizer)
 DRMS: DROPPED — predominantly coal and construction pit data, not relevant to prospecting
 
 BUILD PHASE
@@ -32,13 +32,19 @@ COMPLETED THIS SESSION — 2026-03-17
   Filter: HIKER_PEDESTRIAN_ACCPT IS NOT NULL
   Bike-only, equestrian, and all-others rules dropped
   Color unified to amber (RGB 220,140,0)
+- Backcountry Roads style rebuilt — 10 rules → 6, surface-type organizer
+  Dual-classifier ambiguity resolved (OML vs JURISDICTION+SURFACE_TYPE)
+  Identical rules (OML 4+5) merged; 3 USFS jurisdiction rules folded into surface-type rules
+  Tiered scale visibility: Paved+Gravel at 1:50k, Dirt/Primitive/Others at 1:30k
+  CLOSED road unchanged — red 200,0,0, 0.8mm, 1:35k
+  All widths and colors fully specified — no undefined entries remain
 
 LAYER STATUS — TRANSPORT
 Highways:        Complete — dynamic width scaling, all zoom levels
 Major Roads:     Complete — 0.55mm, scale 1:75,000 and closer
 Minor Arterial:  Complete — 0.7mm, scale 1:50,000 and closer
 Collectors:      Complete — 0.6mm, scale 1:35,000 and closer
-Backcountry:     Complete — scale tuned, priority hierarchy confirmed
+Backcountry:     Complete — 6 rules, surface-type organizer, tiered scale (1:50k paved/gravel, 1:30k dirt/primitive)
 Local Roads:     Complete
 Trails (BLM):    Complete — hiking only, amber (RGB 220,140,0), 1 rule, scale 1:1,000–1:50,000
 Trails (USFS):   Complete — hiking only, amber (RGB 220,140,0), 1 rule, scale 1:1,000–1:50,000
