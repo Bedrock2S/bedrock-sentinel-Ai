@@ -92,7 +92,7 @@ Notes:
 Source: USFS / BLM Road Data — OPER_MAINT_LEVEL and JURISDICTION fields
 Style File: Backcountry_Roads_Style.qml
 
-10 rules — listed by priority:
+6 rules — organized by surface type, tiered scale visibility:
 
   [1] CLOSED ROAD  (OPER_MAINT_LEVEL 1)
       Line — red (RGB 200,0,0)
@@ -100,61 +100,48 @@ Style File: Backcountry_Roads_Style.qml
       Scale — 1:1,000 – 1:35,000
       Meaning: Road closed to public vehicle use. Do not attempt.
 
-  [2] HIGH CLEARANCE 4WD  (OPER_MAINT_LEVEL 2)
-      Line — burnt orange (RGB 180,80,20)
-      Width — 0.7mm
-      Scale — 1:1,000 – 1:35,000
-      Meaning: Requires high clearance 4-wheel drive. Rocky or rutted.
-
-  [3] PASSENGER CAR OK  (OPER_MAINT_LEVEL 3)
-      Line — tan/khaki (RGB 140,100,40)
+  [2] PAVED ROAD  (OPER_MAINT_LEVEL 5 or JURISDICTION FS + SURFACE_TYPE AC)
+      Line — dark brown (RGB 80,50,20)
       Width — 0.6mm
       Scale — 1:1,000 – 1:50,000
-      Meaning: Graded dirt — passable in a standard passenger vehicle.
+      Meaning: Paved surface — OML 5 high-comfort or USFS paved road.
+               Fully maintained. Year-round access typical.
 
-  [4] MODERATE COMFORT  (OPER_MAINT_LEVEL 4)
-      Line — olive green (RGB 100,120,60)
+  [3] GRAVEL / IMPROVED  (OPER_MAINT_LEVEL 3 or 4, or JURISDICTION FS + SURFACE_TYPE AGG)
+      Line — tan/khaki (RGB 140,100,40)
+      Width — 0.55mm
+      Scale — 1:1,000 – 1:50,000
+      Meaning: Gravel or improved surface. Passenger vehicles OK to high comfort.
+               Includes USFS aggregate surface roads.
+
+  [4] DIRT / NATIVE  (OPER_MAINT_LEVEL 2 or JURISDICTION FS + SURFACE_TYPE NAT)
+      Line — light tan (RGB 190,150,90)
       Width — 0.5mm
-      Scale — 1:1,000 – 1:50,000
-      Meaning: Maintained gravel road — moderate driving comfort.
+      Scale — 1:1,000 – 1:30,000
+      Meaning: Native dirt surface. High clearance recommended. Rocky or rutted.
+               Includes USFS native/dirt surface roads.
 
-  [5] HIGH COMFORT  (OPER_MAINT_LEVEL 5)
-      Line — olive green (RGB 100,120,60)
-      Width — 0.5mm
-      Scale — 1:1,000 – 1:50,000
-      Meaning: Fully maintained road — high comfort, often paved.
+  [5] PRIMITIVE / UNMAINTAINED  (OPER_MAINT_LEVEL 0)
+      Line — grey (RGB 160,160,160), dashed
+      Width — 0.4mm
+      Scale — 1:1,000 – 1:30,000
+      Meaning: No maintenance. May be impassable, seasonal, or abandoned.
+               Approach with extreme caution.
 
-  [6] USFS PAVED  (JURISDICTION FS + SURFACE_TYPE AC)
-      Line — dark brown (RGB 80,50,20)
-      Width — 0.7mm
-      Scale — 1:1,000 – 1:50,000
-      Meaning: Forest Service paved road — maintained, year-round access.
+  [6] ALL OTHERS
+      Line — pale tan (RGB 200,170,120)
+      Width — 0.35mm
+      Scale — 1:1,000 – 1:30,000
+      Meaning: Backcountry roads not matched by above rules.
 
-  [7] USFS GRAVEL  (JURISDICTION FS + SURFACE_TYPE AGG)
-      Line — brown
-      Width — 0.7mm
-      Scale — 1:1,000 – 1:35,000
-      Meaning: Forest Service aggregate/gravel surface road.
-
-  [8] USFS NATIVE/DIRT  (JURISDICTION FS + SURFACE_TYPE NAT)
-      Line — brown
-      Width — variable
-      Scale — 1:1,000 – 1:25,000
-      Meaning: Forest Service native surface (dirt) — most primitive access.
-
-  [9] NOT MAINTAINED  (OPER_MAINT_LEVEL 0)
-      Line — brown
-      Width — variable
-      Scale — 1:1,000 – 1:25,000
-      Meaning: No maintenance — may be impassable, seasonal, or abandoned.
-
-  [10] ALL OTHERS
-       Scale — 1:1,000 – 1:35,000
-       Meaning: Backcountry roads not matching above rules.
+Scale tier logic:
+  1:50,000 and closer → Paved + Gravel/Improved appear (area planning scale)
+  1:30,000 and closer → Dirt/Native + Primitive + All Others appear (field nav only)
 
 Labels:
+  Field: NAME
   Color: tan/brown (RGB 164,113,88)
-  Scale: field navigation and closer
+  Scale: 1:1,000 – 1:25,000
 
 --- LOCAL ROADS ---
 Source: TIGER/Line — MTFCC codes S1400, S1640, S1730, S1740
