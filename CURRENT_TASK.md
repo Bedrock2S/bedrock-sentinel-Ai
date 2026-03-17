@@ -16,7 +16,8 @@ not relevant to self-guided prospecting.
 - [x] Reproject Ownership_Final_CO to project CRS — Ownership_Final_CO_26913.gpkg
 - [x] All layers unified at EPSG:26913
 - [x] Virtual fields added — Length_mi (lines), Area_acres (polygons)
-- [ ] Set scale visibility (suppress noise at statewide zoom)
+- [x] Set scale visibility — all rules restricted to 1:1,000–1:75,000
+- [x] MRDS_CO_category.qml added to public repo — Garmin-ready symbology confirmed
 - [ ] Configure labels — Tier 1 site names at close field scale only
 - [ ] Validate MRDS_CO_trimmed.gpkg — confirm features, CRS, category field
 - [ ] Visual QA and validation
@@ -38,11 +39,14 @@ Export pipeline: PAUSED
 Recent confirmed fixes:
 - Arterial hierarchy scale tuning completed
 - Arterial width reduction completed
+- Major Roads scale restricted to 1:75,000 — no longer visible at statewide zoom
+- Major Roads width reduced 0.9mm → 0.55mm — subordinate to Highways
 - Backcountry road priority scale tuning completed
 - Hydro temporal hierarchy styling finalized
 - Historical stream visibility restricted to field scale
 - Perennial stream labeling system finalized (curved placement + halo + priority tuning)
 - Hydro point label placement and scale behavior finalized (spring labels ~1:15k)
+- MRDS_CO prospecting symbology rebuilt — Garmin-ready, 8 rules, Industrial/Noise dropped, scale 1:75k
 
 Current objective:
 
@@ -54,7 +58,7 @@ Active work focus:
 - Intermittent stream rendering performance review
 - Hillshade blend balance verification
 - Multi-zoom transport dominance validation
-- Overlay usability confirmation (Ownership / Geology / Mineral layers)
+- Overlay usability confirmation (Ownership / Geology layers — Mineral complete)
 - Convert all transport and hydro distance interpretation to miles / acres (remove km-based context)
 
 Required validation steps before export restart:
