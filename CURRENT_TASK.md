@@ -47,13 +47,14 @@ Recent confirmed fixes:
 - Perennial stream labeling system finalized (curved placement + halo + priority tuning)
 - Hydro point label placement and scale behavior finalized (spring labels ~1:15k)
 - MRDS_CO prospecting symbology rebuilt — Garmin-ready, 8 rules, Industrial/Noise dropped, scale 1:75k
+- BLM + USFS Trails simplified to hiking only — 1 rule each, amber, bike/equestrian/others dropped
 
 Current objective:
 
 Achieve full **Cartographic Lock** before any new exports.
 
 Active work focus:
-- **Trails symbology and rendering review / fine-tuning** ← CURRENT
+- **MRDS_CO labels — Tier 1 site names at close field scale** ← CURRENT
 - Hydro point symbol refinement (visual hierarchy / mine vs spring readability)
 - Intermittent stream rendering performance review
 - Hillshade blend balance verification
