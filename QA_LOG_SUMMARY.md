@@ -129,6 +129,15 @@ MRDS_CO confirmed as sole mineral intelligence source going forward.
   - Uranium: lime green triangle, 2.5mm
   - Unclassified: grey circle, 1.5mm
 
+## 2026-03-17 — MRDS_CO Labels Expanded — Critical Mineral + Gemstone Added
+
+- Two additional label rules added to `MRDS_CO_category.qml` labeling block
+- Critical Mineral (`"category" = 'Critical Mineral'`) — scale 1:1k–1:10k
+- Gemstone (`"category" = 'Gemstone'`) — scale 1:1k–1:10k
+- Same style as Tier 1: Arial Bold 7pt, dark charcoal, white 0.8mm buffer, PreventOverlap
+- Scale hierarchy: Tier 1 at 1:15k → Critical Mineral + Gemstone at 1:10k → others symbol-only
+- MAP_LEGEND updated with tiered label scale table
+
 ## 2026-03-17 — MRDS_CO Tier 1 Labels Configured
 
 - `MRDS_CO_category.qml` updated — `labelsEnabled` enabled, `styleCategories` includes `Labeling`
