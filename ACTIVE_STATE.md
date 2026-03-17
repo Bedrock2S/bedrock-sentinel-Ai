@@ -1,6 +1,6 @@
 # ACTIVE STATE — Bedrock Sentinel
 
-Last Updated: 2026-03-17 (backcountry roads rebuilt — 10 rules → 6, surface-type organizer)
+Last Updated: 2026-03-17 (MRDS_CO Tier 1 labels configured — site names at close field scale)
 DRMS: DROPPED — predominantly coal and construction pit data, not relevant to prospecting
 
 BUILD PHASE
@@ -38,6 +38,10 @@ COMPLETED THIS SESSION — 2026-03-17
   Tiered scale visibility: Paved+Gravel at 1:50k, Dirt/Primitive/Others at 1:30k
   CLOSED road unchanged — red 200,0,0, 0.8mm, 1:35k
   All widths and colors fully specified — no undefined entries remain
+- MRDS_CO Tier 1 labels configured
+  Rule-based labeling — Tier 1 Active Mine + High-Value Prospect only
+  Field: site_name | Scale: 1:1k–1:15k | Arial Bold 7pt | white 0.8mm buffer
+  PreventOverlap + duplicate suppression — clutter-free close field display
 
 LAYER STATUS — TRANSPORT
 Highways:        Complete — dynamic width scaling, all zoom levels
@@ -60,7 +64,7 @@ Classification:   Complete — category field written to dataset
 Style:            Complete — Garmin-ready, 8 prospecting rules, version-controlled
 CRS:              Standardized — EPSG:26913
 Scale visibility: Complete — all rules 1:1,000–1:75,000
-Labels:           NOT configured — Tier 1 site names at close scale, still pending
+Labels:           Complete — Tier 1 site names (site_name), 1:1k–1:15k, Arial Bold 7pt, white buffer
 Validation:       NOT complete — MRDS_CO_trimmed dataset needs feature/CRS/field QA
 
 LAYER STATUS — OVERLAYS
@@ -81,7 +85,7 @@ All prior exports archived.
 New exports intentionally paused pending final cartographic lock.
 
 REMAINING BEFORE CARTOGRAPHIC LOCK
-- MRDS_CO labels — Tier 1 at close field scale
+- ~~MRDS_CO labels — Tier 1 at close field scale~~ DONE
 - MRDS_CO_trimmed dataset validation
 - Ownership / Geology final overlay usability pass
 - Hillshade blend balance verification

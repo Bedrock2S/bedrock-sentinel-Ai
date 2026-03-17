@@ -1,7 +1,7 @@
 ================================================================================
 BEDROCK SENTINEL — COMPLETE MAP LEGEND & USER GUIDE
 Colorado Prospecting & Field Navigation Map
-Last Updated: 2026-03-17 (trail layers updated — hiking only)
+Last Updated: 2026-03-17 (MRDS_CO Tier 1 labels configured — close field scale)
 CRS: EPSG:26913 (NAD83 / UTM Zone 13N)
 ================================================================================
 
@@ -375,8 +375,15 @@ Scale Visibility: ALL rules 1:1,000 – 1:75,000 (field + area planning only)
                classification not determined from MRDS data.
 
 Labels:
-  NOT YET CONFIGURED — Tier 1 site name labels at close field scale
-  still pending. Next task in queue.
+  Tier 1 site names only (Active Mine + High-Value Prospect)
+  Field: site_name
+  Font: Arial Bold, 7pt
+  Color: dark charcoal (RGB 30,30,30)
+  Buffer: white 250,250,250, 0.8mm
+  Scale: 1:1,000 – 1:15,000 (close field only)
+  Placement: over/near point, quadrant offset
+  Overlap handling: PreventOverlap, duplicate suppression enabled
+  All other categories: no labels (symbol only)
 
 IMPORTANT NOTE:
   Industrial and noise categories (coal, construction aggregate, etc.)
@@ -675,7 +682,7 @@ SECTION 9 — SCALE VISIBILITY QUICK REFERENCE
   (Field Nav)
 
   1:15,000        + Spring/Seep labels on Hydro Points
-  (Close scale)
+  (Close scale)     + MRDS_CO Tier 1 site name labels appear
 
   1:1,000         All active layers at full detail
   (Site detail)
