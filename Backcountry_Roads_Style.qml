@@ -146,16 +146,16 @@
   </elevation>
   <renderer-v2 type="RuleRenderer" referencescale="-1" enableorderby="0" forceraster="0" symbollevels="0">
     <rules key="{6a247b4d-3cc0-44a6-a42b-6b26eb877b49}">
-      <rule symbol="0" scalemaxdenom="250000" scalemindenom="1000" label="Closed Road" key="{6027aa49-fb2e-49c5-bfbf-d43e5780c2f4}" filter="OPER_MAINT_LEVEL LIKE  '1%' "/>
-      <rule symbol="1" scalemaxdenom="250000" scalemindenom="1000" label="High Clearance 4WD" key="{8a63423b-eb5c-43c3-ae81-28f19823384b}" filter="OPER_MAINT_LEVEL LIKE '2%'"/>
-      <rule symbol="2" scalemaxdenom="500000" scalemindenom="1000" label="Passenger Car OK " key="{ba6851e9-7026-430d-b551-6c2d3a367729}" filter="OPER_MAINT_LEVEL LIKE '3%'"/>
-      <rule symbol="3" scalemaxdenom="500000" scalemindenom="1000" label="Moderate Comfort" key="{4fd830ad-bb71-4cf2-a70a-0b22272b2ce3}" filter="OPER_MAINT_LEVEL LIKE  '4%'"/>
-      <rule symbol="4" scalemaxdenom="500000" scalemindenom="1000" label="High Comfort" key="{cb4d9107-da73-459e-8853-0b367cb8b671}" filter="OPER_MAINT_LEVEL LIKE '5%'"/>
-      <rule symbol="5" scalemaxdenom="500000" scalemindenom="1000" label="USFS Paved" key="{5ba7c9b3-b5c2-4e67-ba2f-8b00ed79a378}" filter="JURISDICTION LIKE 'FS%' AND SURFACE_TYPE LIKE 'AC%'"/>
-      <rule symbol="6" scalemaxdenom="250000" scalemindenom="1000" label="USFS Gravel" key="{1783c573-2e45-451c-a5d1-10ed01564da6}" filter="JURISDICTION LIKE 'FS%' AND SURFACE_TYPE LIKE 'AGG%'"/>
-      <rule symbol="7" scalemaxdenom="150000" scalemindenom="1000" label="USFS Native/Dirt" key="{95ee394c-1c89-404d-aed8-d5200212309b}" filter="JURISDICTION LIKE 'FS%' AND SURFACE_TYPE LIKE 'NAT%' "/>
-      <rule symbol="8" scalemaxdenom="100000" scalemindenom="1000" label="Not Maintained " key="{77f87820-1940-44fd-9507-a715c93819d7}" filter="OPER_MAINT_LEVEL LIKE '0%'"/>
-      <rule symbol="9" scalemaxdenom="250000" scalemindenom="1000" label="All Others" key="{0832101b-8933-45d5-8be6-2a2346e32fc4}" filter="ELSE"/>
+      <rule symbol="0" scalemaxdenom="35000" scalemindenom="1000" label="Closed Road" key="{6027aa49-fb2e-49c5-bfbf-d43e5780c2f4}" filter="OPER_MAINT_LEVEL LIKE  '1%' "/>
+      <rule symbol="1" scalemaxdenom="35000" scalemindenom="1000" label="High Clearance 4WD" key="{8a63423b-eb5c-43c3-ae81-28f19823384b}" filter="OPER_MAINT_LEVEL LIKE '2%'"/>
+      <rule symbol="2" scalemaxdenom="50000" scalemindenom="1000" label="Passenger Car OK " key="{ba6851e9-7026-430d-b551-6c2d3a367729}" filter="OPER_MAINT_LEVEL LIKE '3%'"/>
+      <rule symbol="3" scalemaxdenom="50000" scalemindenom="1000" label="Moderate Comfort" key="{4fd830ad-bb71-4cf2-a70a-0b22272b2ce3}" filter="OPER_MAINT_LEVEL LIKE  '4%'"/>
+      <rule symbol="4" scalemaxdenom="50000" scalemindenom="1000" label="High Comfort" key="{cb4d9107-da73-459e-8853-0b367cb8b671}" filter="OPER_MAINT_LEVEL LIKE '5%'"/>
+      <rule symbol="5" scalemaxdenom="50000" scalemindenom="1000" label="USFS Paved" key="{5ba7c9b3-b5c2-4e67-ba2f-8b00ed79a378}" filter="JURISDICTION LIKE 'FS%' AND SURFACE_TYPE LIKE 'AC%'"/>
+      <rule symbol="6" scalemaxdenom="35000" scalemindenom="1000" label="USFS Gravel" key="{1783c573-2e45-451c-a5d1-10ed01564da6}" filter="JURISDICTION LIKE 'FS%' AND SURFACE_TYPE LIKE 'AGG%'"/>
+      <rule symbol="7" scalemaxdenom="25000" scalemindenom="1000" label="USFS Native/Dirt" key="{95ee394c-1c89-404d-aed8-d5200212309b}" filter="JURISDICTION LIKE 'FS%' AND SURFACE_TYPE LIKE 'NAT%' "/>
+      <rule symbol="8" scalemaxdenom="25000" scalemindenom="1000" label="Not Maintained " key="{77f87820-1940-44fd-9507-a715c93819d7}" filter="OPER_MAINT_LEVEL LIKE '0%'"/>
+      <rule symbol="9" scalemaxdenom="35000" scalemindenom="1000" label="All Others" key="{0832101b-8933-45d5-8be6-2a2346e32fc4}" filter="ELSE"/>
     </rules>
     <symbols>
       <symbol force_rhr="0" type="line" frame_rate="10" clip_to_extent="1" is_animated="0" name="0" alpha="1">
@@ -691,7 +691,7 @@
   </selection>
   <labeling type="rule-based">
     <rules key="{15d65353-a0ff-45b3-8405-b1d2618dbfe2}">
-      <rule description="NAME IS NOT NULL" scalemaxdenom="100000" scalemindenom="1000" key="{b664c1ff-8e62-4bf0-8477-707af9564cb4}" filter="&quot;NAME&quot;">
+      <rule description="NAME IS NOT NULL" scalemaxdenom="25000" scalemindenom="1000" key="{b664c1ff-8e62-4bf0-8477-707af9564cb4}" filter="&quot;NAME&quot;">
         <settings calloutType="simple">
           <text-style fontSizeMapUnitScale="3x:0,0,0,0,0,0" multilineHeight="1" namedStyle="Bold" fontLetterSpacing="0" allowHtml="0" fieldName="NAME" legendString="Aa" fontItalic="0" tabStopDistanceUnit="Point" fontSizeUnit="Point" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" fontSize="6" textColor="80,50,20,255,rgb:0.3137255,0.1960784,0.0784314,1" textOrientation="horizontal" isExpression="0" fontWeight="75" multilineHeightUnit="Percentage" useSubstitutions="0" fontFamily="Arial" blendMode="0" forcedItalic="0" fontWordSpacing="0" fontKerning="1" fontUnderline="0" capitalization="0" textOpacity="1" fontStrikeout="0" tabStopDistance="80" forcedBold="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0">
             <families/>
