@@ -1,6 +1,6 @@
 # ACTIVE STATE — Bedrock Sentinel
 
-Last Updated: 2026-03-17
+Last Updated: 2026-03-17 (trail layers locked — hiking only)
 DRMS: DROPPED — predominantly coal and construction pit data, not relevant to prospecting
 
 BUILD PHASE
@@ -24,6 +24,14 @@ COMPLETED THIS SESSION — 2026-03-17
   Industrial / Noise category dropped — not relevant to self-guided prospecting
   Symbols redesigned for Garmin readability: high contrast, simple shapes, size hierarchy
   Filter expressions corrected to exact category values from classification script
+- BLM Trails simplified — 4 rules → 1 (Hiking Trail only)
+  Filter: NON_MOTO_SHARED OR BIKE_HIK_ONLY
+  Bike-only and all-others rules dropped — not relevant to foot-based prospecting
+  Color unified to amber (RGB 220,140,0)
+- USFS Trails simplified — 5 rules → 1 (Hiking Trail only)
+  Filter: HIKER_PEDESTRIAN_ACCPT IS NOT NULL
+  Bike-only, equestrian, and all-others rules dropped
+  Color unified to amber (RGB 220,140,0)
 
 LAYER STATUS — TRANSPORT
 Highways:        Complete — dynamic width scaling, all zoom levels
@@ -32,8 +40,8 @@ Minor Arterial:  Complete — 0.7mm, scale 1:50,000 and closer
 Collectors:      Complete — 0.6mm, scale 1:35,000 and closer
 Backcountry:     Complete — scale tuned, priority hierarchy confirmed
 Local Roads:     Complete
-Trails (BLM):    Fine-tuning still required
-Trails (USFS):   Fine-tuning still required
+Trails (BLM):    Complete — hiking only, amber (RGB 220,140,0), 1 rule, scale 1:1,000–1:50,000
+Trails (USFS):   Complete — hiking only, amber (RGB 220,140,0), 1 rule, scale 1:1,000–1:50,000
 
 LAYER STATUS — HYDRO
 Perennial streams:    Complete — dominant blue, 0.7mm, visible from 1:100,000, labeled
@@ -67,7 +75,6 @@ All prior exports archived.
 New exports intentionally paused pending final cartographic lock.
 
 REMAINING BEFORE CARTOGRAPHIC LOCK
-- Trails symbology and rendering fine-tuning (BLM + USFS)
 - MRDS_CO labels — Tier 1 at close field scale
 - MRDS_CO_trimmed dataset validation
 - Ownership / Geology final overlay usability pass
@@ -76,5 +83,5 @@ REMAINING BEFORE CARTOGRAPHIC LOCK
 - Performance redraw test
 
 NEXT STATE TRANSITION
-Trails fine-tuning → MRDS labels → dataset validation
-→ final overlay pass → declare CARTOGRAPHIC LOCK → resume export pipeline
+MRDS labels → dataset validation → final overlay pass
+→ declare CARTOGRAPHIC LOCK → resume export pipeline

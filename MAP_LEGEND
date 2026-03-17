@@ -1,7 +1,7 @@
 ================================================================================
 BEDROCK SENTINEL — COMPLETE MAP LEGEND & USER GUIDE
 Colorado Prospecting & Field Navigation Map
-Last Updated: 2026-03-17
+Last Updated: 2026-03-17 (trail layers updated — hiking only)
 CRS: EPSG:26913 (NAD83 / UTM Zone 13N)
 ================================================================================
 
@@ -177,63 +177,37 @@ Notes:
 Source: BLM Trail Data — PLAN_ALLOW_MODE_TRNSPRT field
 Style File: BLM_Trails_CO_Style.qml
 
-4 rules:
+1 rule — hiking-accessible only:
 
-  [1] SHARED NON-MOTORIZED
-      Line — olive/yellow-green (RGB 180,160,40)
-      Width — 0.5mm  |  Scale — 1:1,000 – 1:50,000
-      Meaning: Open to all non-motorized users.
-
-  [2] HIKER + BIKE
+  [1] HIKING TRAIL
+      Filter: PLAN_ALLOW_MODE_TRNSPRT = 'NON_MOTO_SHARED' OR 'BIKE_HIK_ONLY'
       Line — amber (RGB 220,140,0)
-      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
-      Meaning: Foot traffic and bicycles permitted.
-
-  [3] BIKE ONLY
-      Line — lime green (RGB 100,180,40)
-      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
-      Meaning: Bicycle use only — no hiking.
-
-  [4] ALL OTHERS
-      Line — bright orange (RGB 255,158,23)
-      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
-      Meaning: Other non-motorized designations.
+      Width — 0.5mm  |  Style — dash dot  |  Scale — 1:1,000 – 1:50,000
+      Meaning: Foot-accessible BLM trails. Includes shared non-motorized
+               routes and hiker+bike designations. Bike-only and
+               all-others routes suppressed — not relevant to prospecting.
 
 --- USFS TRAILS ---
-Source: USFS Trail Data — HIKER_PEDESTRIAN_ACCPT, BICYCLE_ACCPT, PACK_SADDLE_ACCPT fields
+Source: USFS Trail Data — HIKER_PEDESTRIAN_ACCPT field
 Style File: USFS_Trails_CO_Style.qml
 
-5 rules:
+1 rule — hiking-accessible only:
 
-  [1] HIKER + BIKE
+  [1] HIKING TRAIL
+      Filter: HIKER_PEDESTRIAN_ACCPT IS NOT NULL
       Line — amber (RGB 220,140,0)
-      Width — 0.7mm  |  Scale — 1:1,000 – 1:50,000
-      Meaning: Both hiking and biking accepted.
-
-  [2] HIKER ONLY
-      Line — burnt orange (RGB 200,80,20)
-      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
-      Meaning: Foot traffic only — no bikes.
-
-  [3] BIKE ONLY
-      Line — lime green (RGB 100,180,40)
-      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
-      Meaning: Bicycle use only.
-
-  [4] EQUESTRIAN
-      Line — (pack/saddle accepted field)
-      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
-      Meaning: Horse/pack animal use accepted.
-
-  [5] ALL OTHERS
-      Line — bright orange (RGB 255,158,23)
-      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
-      Meaning: Other USFS trail designations.
+      Width — 0.7mm  |  Style — dashed  |  Scale — 1:1,000 – 1:50,000
+      Meaning: Foot-accessible USFS trails. Shows any trail where
+               hiker/pedestrian use is accepted, regardless of whether
+               bikes or horses are also allowed. Bike-only, equestrian-only,
+               and all-others routes suppressed.
 
 Notes (BLM + USFS Trails):
+  Both layers simplified to hiking-accessible trails only.
+  Bike-only, equestrian, and unclassified routes are hidden — these
+  are not relevant to foot-based prospecting and outdoor navigation.
   Both trail layers visible up to 1:50,000 (area planning scale).
-  Symbology fine-tuning still in progress — subject to revision.
-  Labels: pending configuration.
+  Labels: trail name labels active at 1:1,000 – 1:50,000.
 
 ================================================================================
 SECTION 2 — HYDROLOGY LAYERS
