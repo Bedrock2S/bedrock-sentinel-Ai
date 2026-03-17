@@ -1,6 +1,6 @@
 # ACTIVE STATE — Bedrock Sentinel
 
-Last Updated: 2026-03-17
+Last Updated: 2026-03-16
 DRMS: DROPPED — predominantly coal and construction pit data, not relevant to prospecting
 
 BUILD PHASE
@@ -25,7 +25,7 @@ CURRENT FOCUS
 - MRDS_CO scale visibility — not yet set, will be noisy at state-wide zoom
 - MRDS_CO labels — not yet configured (Tier 1 features at close scale, optional)
 - DRMS merge — DROPPED. Dataset is predominantly coal and construction pit data.
-- Trails symbology complete — 2-rule scheme finalized (orange hiking, grey other)
+- Trails symbology and rendering fine-tuning still required
 - Final export work remains paused
 
 LAYER STATUS — MRDS_CO

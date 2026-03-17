@@ -57,20 +57,6 @@ Perennial stream labeling system finalized:
 - Label priority tuned below transport layers
 - Labels begin rendering ~1:100k with optimal readability at field scales
 
-## 2026-03-17 — Trails Symbology Simplified to 2 Rules
-
-Both BLM_Trails_CO and USFS_Trails_CO trail layers reduced from 5-6 rules to 2 unified rules:
-
-- **Rule 1 — Hiking Permitted**: Orange `RGB 230,110,0`, dash `5;3`, `0.5mm`
-  - BLM filter: `PLAN_ALLOW_MODE_TRNSPRT IN ('BIKE_HIK_ONLY', 'NON_MOTO_SHARED')`
-  - USFS filter: `HIKER_PEDESTRIAN_ACCPT IS NOT NULL`
-- **Rule 2 — Other Trails**: Grey `RGB 120,120,120`, dash `3;5`, `0.4mm` (ELSE)
-
-Previous rules removed: Bike Only (green), Equestrian (purple), Hiker+Bike split, Hiker Only split.
-Use-type detail retained in click popup attributes only.
-No conflict with roads (solid), hydro (blue), closed roads (red), geology (earth tones).
-Double-render eliminated — no trail can match more than one rule.
-
 Hydro point labeling behavior refined:
 - Spring labels restricted to close navigation scale (~1:15k)
 - Symbols remain visible at broader field scales (~35k)
