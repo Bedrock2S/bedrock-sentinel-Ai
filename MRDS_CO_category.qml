@@ -9,45 +9,45 @@
   <renderer-v2 type="RuleRenderer" referencescale="-1" enableorderby="0" forceraster="0" symbollevels="0">
     <rules key="{mrds-root-rule}">
       <!-- Tier 1: High-Value Prospect + Active Mine — gold star, dominant, 4.0mm -->
-      <rule symbol="0" scalemindenom="1000" scalemaxdenom="50000"
+      <rule symbol="0" scalemindenom="1000" scalemaxdenom="75000"
             label="Tier 1 Active/Prospect"
             key="{mrds-tier1}"
-            filter="&quot;category&quot; LIKE 'Tier 1%'"/>
+            filter="&quot;category&quot; = 'Tier 1 &#x2014; High-Value Prospect' OR &quot;category&quot; = 'Tier 1 &#x2014; Active Mine'"/>
       <!-- Tier 2 Past Producer — orange circle, 3.0mm -->
-      <rule symbol="1" scalemindenom="1000" scalemaxdenom="50000"
+      <rule symbol="1" scalemindenom="1000" scalemaxdenom="75000"
             label="Tier 2 Past Producer"
             key="{mrds-tier2}"
-            filter="&quot;category&quot; = 'Tier 2 — Past Producer'"/>
+            filter="&quot;category&quot; = 'Tier 2 &#x2014; Past Producer'"/>
       <!-- Tailings — brown square, 2.5mm -->
-      <rule symbol="2" scalemindenom="1000" scalemaxdenom="50000"
+      <rule symbol="2" scalemindenom="1000" scalemaxdenom="75000"
             label="Tailings"
             key="{mrds-tailings}"
             filter="&quot;category&quot; = 'Tailings'"/>
       <!-- Base Metal: Prospect + Active + Other — teal circle, 2.5mm -->
-      <rule symbol="3" scalemindenom="1000" scalemaxdenom="50000"
+      <rule symbol="3" scalemindenom="1000" scalemaxdenom="75000"
             label="Base Metal"
             key="{mrds-basemetal}"
-            filter="&quot;category&quot; LIKE 'Base Metal%'"/>
+            filter="&quot;category&quot; = 'Base Metal Prospect' OR &quot;category&quot; = 'Base Metal &#x2014; Active' OR &quot;category&quot; = 'Base Metal &#x2014; Other'"/>
       <!-- Critical Mineral — purple diamond, 2.5mm -->
-      <rule symbol="4" scalemindenom="1000" scalemaxdenom="50000"
+      <rule symbol="4" scalemindenom="1000" scalemaxdenom="75000"
             label="Critical Mineral"
             key="{mrds-critical}"
             filter="&quot;category&quot; = 'Critical Mineral'"/>
       <!-- Gemstone — magenta diamond, 2.5mm -->
-      <rule symbol="5" scalemindenom="1000" scalemaxdenom="50000"
+      <rule symbol="5" scalemindenom="1000" scalemaxdenom="75000"
             label="Gemstone"
             key="{mrds-gemstone}"
             filter="&quot;category&quot; = 'Gemstone'"/>
       <!-- Uranium — lime green triangle, 2.5mm -->
-      <rule symbol="6" scalemindenom="1000" scalemaxdenom="50000"
+      <rule symbol="6" scalemindenom="1000" scalemaxdenom="75000"
             label="Uranium"
             key="{mrds-uranium}"
             filter="&quot;category&quot; = 'Uranium'"/>
       <!-- Unclassified: all variants — grey small circle, 1.5mm -->
-      <rule symbol="7" scalemindenom="1000" scalemaxdenom="50000"
+      <rule symbol="7" scalemindenom="1000" scalemaxdenom="75000"
             label="Unclassified"
             key="{mrds-unclassified}"
-            filter="&quot;category&quot; LIKE '%Unclassified%'"/>
+            filter="&quot;category&quot; = 'Prospect &#x2014; Unclassified' OR &quot;category&quot; = 'Past Producer &#x2014; Unclassified' OR &quot;category&quot; = 'Active &#x2014; Unclassified' OR &quot;category&quot; = 'Unclassified'"/>
       <!-- Industrial / Noise — INTENTIONALLY OMITTED -->
     </rules>
     <symbols>
