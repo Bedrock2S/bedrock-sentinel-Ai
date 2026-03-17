@@ -18,8 +18,11 @@ not relevant to self-guided prospecting.
 - [x] Virtual fields added — Length_mi (lines), Area_acres (polygons)
 - [x] Set scale visibility — all rules restricted to 1:1,000–1:75,000
 - [x] MRDS_CO_category.qml added to public repo — Garmin-ready symbology confirmed
-- [x] Configure labels — Tier 1 site names at close field scale only
-       site_name field | 1:1k–1:15k | Arial Bold 7pt | white 0.8mm buffer | PreventOverlap
+- [x] Configure labels — rule-based, 3 categories, tiered by scale
+       Tier 1 (Active Mine + High-Value Prospect): site_name | 1:1k–1:15k | Arial Bold 7pt | white 0.8mm buffer
+       Critical Mineral: site_name | 1:1k–1:10k | same style
+       Gemstone: site_name | 1:1k–1:10k | same style
+       All confirmed working in QGIS
 - [ ] Validate MRDS_CO_trimmed.gpkg — confirm features, CRS, category field
 - [ ] Visual QA and validation
 - [ ] Confirm new layer replaces old — delete old hydro point mining layer
@@ -56,7 +59,7 @@ Current objective:
 Achieve full **Cartographic Lock** before any new exports.
 
 Active work focus:
-- **MRDS_CO labels — Tier 1 site names at close field scale** ← CURRENT
+- ~~**MRDS_CO labels — Tier 1 site names at close field scale**~~ COMPLETE — all 3 categories confirmed
 - Hydro point symbol refinement (visual hierarchy / mine vs spring readability)
 - Intermittent stream rendering performance review
 - Hillshade blend balance verification
