@@ -107,6 +107,26 @@ DRMS (Colorado Division of Reclamation, Mining and Safety) not added.
 Dataset assessed as predominantly coal and construction pit data — outside project scope.
 MRDS_CO confirmed as sole mineral intelligence source going forward.
 
+## 2026-03-17 — Backcountry Roads Style Rebuilt — 10 Rules → 6
+
+- `Backcountry_Roads_Style.qml` consolidated from 10 rules to 6
+- Previous style used two competing classifiers (OML and JURISDICTION+SURFACE_TYPE)
+  causing render ambiguity. Rebuilt around surface type as single organizer.
+- Rule 0 (Closed Road) — **zero changes** — red 200,0,0, 0.8mm, 1:35k
+- New rules organized by surface quality, dark to light color ramp:
+  - Paved Road: dark brown 80,50,20, 0.6mm, 1:50k
+    Filter: OML 5 OR (FS jurisdiction AND surface AC)
+  - Gravel / Improved: tan 140,100,40, 0.55mm, 1:50k
+    Filter: OML 3 OR OML 4 OR (FS AND surface AGG)
+  - Dirt / Native: light tan 190,150,90, 0.5mm, 1:30k
+    Filter: OML 2 OR (FS AND surface NAT)
+  - Primitive / Unmaintained: grey 160,160,160, 0.4mm, dashed, 1:30k
+    Filter: OML 0
+  - All Others: pale tan 200,170,120, 0.35mm, 1:30k
+    Filter: ELSE
+- Scale tiers: Paved+Gravel visible at 1:50k; Dirt/Primitive/Other only at 1:30k
+- Labels: unchanged — NAME field, Arial Bold 6pt, 1:1k–1:25k
+
 ## 2026-03-17 — Arterials Major Roads Scale + Width Tuning
 
 - Major Roads rule (`funcclassi` 2/3) scale restricted to `1:1,000–1:75,000` (was unbounded — visible at statewide zoom)
