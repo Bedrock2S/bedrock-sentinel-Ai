@@ -18,7 +18,8 @@ not relevant to self-guided prospecting.
 - [x] Virtual fields added — Length_mi (lines), Area_acres (polygons)
 - [x] Set scale visibility — all rules restricted to 1:1,000–1:75,000
 - [x] MRDS_CO_category.qml added to public repo — Garmin-ready symbology confirmed
-- [ ] Configure labels — Tier 1 site names at close field scale only
+- [x] Configure labels — Tier 1 site names at close field scale only
+       site_name field | 1:1k–1:15k | Arial Bold 7pt | white 0.8mm buffer | PreventOverlap
 - [ ] Validate MRDS_CO_trimmed.gpkg — confirm features, CRS, category field
 - [ ] Visual QA and validation
 - [ ] Confirm new layer replaces old — delete old hydro point mining layer
