@@ -1,53 +1,80 @@
 # ACTIVE STATE — Bedrock Sentinel
 
-Last Updated: 2026-03-16
+Last Updated: 2026-03-17
 DRMS: DROPPED — predominantly coal and construction pit data, not relevant to prospecting
 
 BUILD PHASE
-Data correction / cartographic stabilization
+Cartographic stabilization — approaching lock
 
 CURRENT REALITY
 Cartographic lock is not yet active.
-MRDS_CO classification pipeline complete. All project layers now standardized to EPSG:26913.
-Virtual fields (Length_mi, Area_acres) added to all line and polygon layers.
+All project layers standardized to EPSG:26913.
+Virtual fields (Length_mi, Area_acres) active on all line and polygon layers.
+Transport hierarchy tuned and stable. Hydro hierarchy tuned and stable.
+MRDS_CO classification and symbology complete. Scale visibility and labels remain pending.
 
-COMPLETED THIS SESSION
-- classify_mrds.py written and run — 'category' field written to MRDS_CO.gpkg
-- MRDS_CO_category.qml style built and confirmed rendering in QGIS
-- All 15 classification tiers visually confirmed at field navigation scales
-- Full pipeline documentation written to private repo
-- MRDS_CO_trimmed reprojected → MRDS_CO_trimmed_26913.gpkg (EPSG:26913)
-- Ownership_Final_CO reprojected → Ownership_Final_CO_26913.gpkg (EPSG:26913)
-- All project layers now unified at EPSG:26913
-- Virtual fields added: Length_mi (all line layers), Area_acres (all polygon layers)
+COMPLETED THIS SESSION — 2026-03-17
+- Major Roads (funcclassi 2/3) scale restricted to 1:1,000–1:75,000
+  Was unbounded — rendered at all zoom levels including statewide overview
+- Major Roads line width reduced from 0.9mm to 0.55mm
+  Now correctly subordinate to Highways in visual hierarchy
+- MRDS_CO_category.qml rebuilt and added to public repo
+  Previous version existed only outside version control
+  Rebuilt as prospecting-focused RuleRenderer — 8 rules, all at 1:1,000–1:75,000
+  Industrial / Noise category dropped — not relevant to self-guided prospecting
+  Symbols redesigned for Garmin readability: high contrast, simple shapes, size hierarchy
+  Filter expressions corrected to exact category values from classification script
 
-CURRENT FOCUS
-- MRDS_CO scale visibility — not yet set, will be noisy at state-wide zoom
-- MRDS_CO labels — not yet configured (Tier 1 features at close scale, optional)
-- DRMS merge — DROPPED. Dataset is predominantly coal and construction pit data.
-- Trails symbology and rendering fine-tuning still required
-- Final export work remains paused
+LAYER STATUS — TRANSPORT
+Highways:        Complete — dynamic width scaling, all zoom levels
+Major Roads:     Complete — 0.55mm, scale 1:75,000 and closer
+Minor Arterial:  Complete — 0.7mm, scale 1:50,000 and closer
+Collectors:      Complete — 0.6mm, scale 1:35,000 and closer
+Backcountry:     Complete — scale tuned, priority hierarchy confirmed
+Local Roads:     Complete
+Trails (BLM):    Fine-tuning still required
+Trails (USFS):   Fine-tuning still required
+
+LAYER STATUS — HYDRO
+Perennial streams:    Complete — dominant blue, 0.7mm, visible from 1:100,000, labeled
+Intermittent streams: Complete — medium blue dash, 0.5mm, visible from 1:35,000
+Historical streams:   Complete — blue-grey micro-dash, 0.5mm, visible from 1:35,000
+Hydro points:         Stable — springs labeled at ~1:15k, symbols from ~1:35k
 
 LAYER STATUS — MRDS_CO
-Script:          Complete — category field written to disk
-Style:           Complete — confirmed rendering in QGIS
-CRS:             STANDARDIZED — EPSG:26913 (MRDS_CO_trimmed_26913.gpkg)
-Scale visibility: NOT configured
-Labels:          NOT configured
-DRMS merge:      DROPPED
+Classification:   Complete — category field written to dataset
+Style:            Complete — Garmin-ready, 8 prospecting rules, version-controlled
+CRS:              Standardized — EPSG:26913
+Scale visibility: Complete — all rules 1:1,000–1:75,000
+Labels:           NOT configured — Tier 1 site names at close scale, still pending
+Validation:       NOT complete — MRDS_CO_trimmed dataset needs feature/CRS/field QA
+
+LAYER STATUS — OVERLAYS
+Mineral Regions:          Complete
+Mineral System Indicators: Complete
+Ownership:                Complete — pending final overlay usability pass
+Geology (Bedrock):        Complete — pending final overlay usability pass
+Geology (Volcanic):       Complete — pending final overlay usability pass
 
 KNOWN LIMITATION
 Hydro point mining-related data is a simplified derivative and does not adequately
 represent historic tailings piles or full mining disturbance classes.
-MRDS_CO is now the primary mining intelligence layer.
-Hydro point mine features remain in project as temporary context data pending
-final MRDS_CO validation.
+MRDS_CO is the primary mining intelligence layer.
+Hydro point mine features remain as temporary context pending MRDS_CO final validation.
 
 EXPORT STATUS
 All prior exports archived.
-New exports intentionally paused pending CRS correction, data finalization,
-and final cartographic lock.
+New exports intentionally paused pending final cartographic lock.
+
+REMAINING BEFORE CARTOGRAPHIC LOCK
+- Trails symbology and rendering fine-tuning (BLM + USFS)
+- MRDS_CO labels — Tier 1 at close field scale
+- MRDS_CO_trimmed dataset validation
+- Ownership / Geology final overlay usability pass
+- Hillshade blend balance verification
+- Full multi-zoom readability pass (statewide → regional → field → close)
+- Performance redraw test
 
 NEXT STATE TRANSITION
-MRDS_CO CRS reproject → scale visibility set → labels configured
-→ MRDS_CO_trimmed.gpkg validated → resume cartographic lock → export
+Trails fine-tuning → MRDS labels → dataset validation
+→ final overlay pass → declare CARTOGRAPHIC LOCK → resume export pipeline
