@@ -8,26 +8,26 @@
   </flags>
   <renderer-v2 type="RuleRenderer" referencescale="-1" enableorderby="0" forceraster="0" symbollevels="0">
     <rules key="{mrds-root-rule}">
-      <!-- Tier 1 Active/Prospect — gold star, dominant, 4.0mm -->
+      <!-- Tier 1: High-Value Prospect + Active Mine — gold star, dominant, 4.0mm -->
       <rule symbol="0" scalemindenom="1000" scalemaxdenom="50000"
             label="Tier 1 Active/Prospect"
             key="{mrds-tier1}"
-            filter="&quot;category&quot; = 'Tier 1 Active/Prospect'"/>
+            filter="&quot;category&quot; LIKE 'Tier 1%'"/>
       <!-- Tier 2 Past Producer — orange circle, 3.0mm -->
       <rule symbol="1" scalemindenom="1000" scalemaxdenom="50000"
             label="Tier 2 Past Producer"
             key="{mrds-tier2}"
-            filter="&quot;category&quot; = 'Tier 2 Past Producer'"/>
+            filter="&quot;category&quot; = 'Tier 2 — Past Producer'"/>
       <!-- Tailings — brown square, 2.5mm -->
       <rule symbol="2" scalemindenom="1000" scalemaxdenom="50000"
             label="Tailings"
             key="{mrds-tailings}"
             filter="&quot;category&quot; = 'Tailings'"/>
-      <!-- Base Metal — teal circle, 2.5mm -->
+      <!-- Base Metal: Prospect + Active + Other — teal circle, 2.5mm -->
       <rule symbol="3" scalemindenom="1000" scalemaxdenom="50000"
             label="Base Metal"
             key="{mrds-basemetal}"
-            filter="&quot;category&quot; = 'Base Metal'"/>
+            filter="&quot;category&quot; LIKE 'Base Metal%'"/>
       <!-- Critical Mineral — purple diamond, 2.5mm -->
       <rule symbol="4" scalemindenom="1000" scalemaxdenom="50000"
             label="Critical Mineral"
@@ -43,12 +43,12 @@
             label="Uranium"
             key="{mrds-uranium}"
             filter="&quot;category&quot; = 'Uranium'"/>
-      <!-- Unclassified — grey small circle, 1.5mm -->
+      <!-- Unclassified: all variants — grey small circle, 1.5mm -->
       <rule symbol="7" scalemindenom="1000" scalemaxdenom="50000"
             label="Unclassified"
             key="{mrds-unclassified}"
-            filter="&quot;category&quot; = 'Unclassified'"/>
-      <!-- Industrial/Noise — INTENTIONALLY OMITTED -->
+            filter="&quot;category&quot; LIKE '%Unclassified%'"/>
+      <!-- Industrial / Noise — INTENTIONALLY OMITTED -->
     </rules>
     <symbols>
       <!-- Symbol 0: Tier 1 Active/Prospect — gold star 4.0mm -->
