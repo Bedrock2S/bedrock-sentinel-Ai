@@ -106,3 +106,25 @@ Status:
 DRMS (Colorado Division of Reclamation, Mining and Safety) not added.
 Dataset assessed as predominantly coal and construction pit data — outside project scope.
 MRDS_CO confirmed as sole mineral intelligence source going forward.
+
+## 2026-03-17 — Arterials Major Roads Scale + Width Tuning
+
+- Major Roads rule (`funcclassi` 2/3) scale restricted to `1:1,000–1:75,000` (was unbounded — visible at statewide zoom)
+- Line width reduced from `0.9mm` → `0.55mm` to render thinner than Highways (which peak at `1.2mm`)
+- Minor Arterial and Collectors rules unchanged
+
+## 2026-03-17 — MRDS_CO_category.qml Rebuilt for Prospecting
+
+- New `MRDS_CO_category.qml` created in public repo (previously existed only outside repo)
+- Renderer: RuleRenderer with 8 rules, all restricted to `1:1,000–1:75,000`
+- Industrial / Noise category dropped entirely — not relevant to self-guided prospecting
+- Filter expressions use exact original category values from `classify_mrds.py` (em-dash encoded)
+- Symbol hierarchy (Garmin-appropriate — high contrast, simple shapes):
+  - Tier 1 Active/Prospect: gold star, 4.0mm
+  - Tier 2 Past Producer: orange circle, 3.0mm
+  - Tailings: brown square, 2.5mm
+  - Base Metal: teal circle, 2.5mm
+  - Critical Mineral: purple diamond, 2.5mm
+  - Gemstone: magenta diamond, 2.5mm
+  - Uranium: lime green triangle, 2.5mm
+  - Unclassified: grey circle, 1.5mm
