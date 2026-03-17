@@ -18,7 +18,7 @@ not relevant to self-guided prospecting.
 - [x] Virtual fields added — Length_mi (lines), Area_acres (polygons)
 - [ ] Set scale visibility (suppress noise at statewide zoom)
 - [ ] Configure labels — Tier 1 site names at close field scale only
-- [ ] Export stripped POI GeoJSON via export_mrds_poi.py
+- [ ] Validate MRDS_CO_trimmed.gpkg — confirm features, CRS, category field
 - [ ] Visual QA and validation
 - [ ] Confirm new layer replaces old — delete old hydro point mining layer
 
@@ -49,13 +49,13 @@ Current objective:
 Achieve full **Cartographic Lock** before any new exports.
 
 Active work focus:
+- **Trails symbology and rendering review / fine-tuning** ← CURRENT
 - Hydro point symbol refinement (visual hierarchy / mine vs spring readability)
 - Intermittent stream rendering performance review
 - Hillshade blend balance verification
 - Multi-zoom transport dominance validation
 - Overlay usability confirmation (Ownership / Geology / Mineral layers)
 - Convert all transport and hydro distance interpretation to miles / acres (remove km-based context)
-- Complete full trails symbology and rendering review / fine-tuning
 
 Required validation steps before export restart:
 1. Statewide readability pass
