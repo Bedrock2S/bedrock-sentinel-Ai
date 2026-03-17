@@ -1,1 +1,755 @@
+================================================================================
+BEDROCK SENTINEL — COMPLETE MAP LEGEND & USER GUIDE
+Colorado Prospecting & Field Navigation Map
+Last Updated: 2026-03-17
+CRS: EPSG:26913 (NAD83 / UTM Zone 13N)
+================================================================================
 
+HOW TO READ THIS LEGEND
+------------------------
+Each layer entry shows:
+  - Layer name and data source
+  - Symbol description (line weight, color description, style)
+  - Scale visibility (when the layer appears/disappears as you zoom)
+  - Label behavior (what text appears and at what zoom)
+
+Scale reference:
+  Statewide overview  =  1:500,000 and smaller (zoomed out)
+  Regional            =  1:100,000 – 1:200,000
+  Area planning       =  1:35,000 – 1:75,000
+  Field navigation    =  1:10,000 – 1:35,000
+  Close / site detail =  1:1,000  – 1:10,000
+
+================================================================================
+SECTION 1 — TRANSPORT LAYERS
+================================================================================
+
+--- HIGHWAYS ---
+Source: TIGER/Line Roads, funcclassi 1
+Style File: Highway_Style.qml
+
+Symbol:
+  Line — dark charcoal/black (RGB 60,60,60)
+  Line width — dynamic scaling, peaks at 1.2mm at field scale
+  Casing — thin dark outline (RGB 35,35,35) at 0.26mm
+Scale Visibility: All zoom levels (no scale restriction)
+Labels:
+  Color: muted green (RGB 114,155,111)
+  Halo: white
+  Scale: 1:1,000 – 1:50,000
+  Placement: curved along line
+
+Notes:
+  Dominant transport layer — always visible from statewide to field scale.
+  Thickest road line on the map. All other road classes render below this.
+
+--- MAJOR ROADS ---
+Source: TIGER/Line Roads, funcclassi 2 and 3
+Style File: Arterials_Collectors_Style.qml — Rule: Major Roads
+
+Symbol:
+  Line — medium dark gray (RGB 80,80,80)
+  Line width — 0.55mm
+  Casing — none
+Scale Visibility: 1:1,000 – 1:75,000 (hidden at statewide/regional overview)
+Labels:
+  Color: gold/amber (RGB 213,180,60)
+  Halo: white
+  Scale: 1:1,000 – 1:200,000
+
+Notes:
+  Subordinate to Highways visually. Does not render at overview scales.
+  Represents principal arterials — paved state routes and county roads.
+
+--- MINOR ARTERIALS ---
+Source: TIGER/Line Roads, funcclassi 4
+Style File: Arterials_Collectors_Style.qml — Rule: Minor Arterial
+
+Symbol:
+  Line — gray (RGB 100,100,100)
+  Line width — 0.7mm
+Scale Visibility: 1:1,000 – 1:50,000
+Labels: same gold label style, scale 1:1,000 – 1:200,000
+
+Notes:
+  Secondary paved roads. Appears only at area planning and closer scales.
+
+--- COLLECTORS ---
+Source: TIGER/Line Roads, funcclassi 5 and 6
+Style File: Arterials_Collectors_Style.qml — Rule: Collectors
+
+Symbol:
+  Line — light gray (RGB 120,120,120)
+  Line width — 0.6mm
+Scale Visibility: 1:1,000 – 1:35,000
+Labels: same gold label style, scale 1:1,000 – 1:200,000
+
+Notes:
+  Collector roads — typically paved county routes feeding into arterials.
+  Only visible at field navigation scale and closer.
+
+--- BACKCOUNTRY ROADS ---
+Source: USFS / BLM Road Data — OPER_MAINT_LEVEL and JURISDICTION fields
+Style File: Backcountry_Roads_Style.qml
+
+10 rules — listed by priority:
+
+  [1] CLOSED ROAD  (OPER_MAINT_LEVEL 1)
+      Line — red (RGB 200,0,0)
+      Width — 0.8mm
+      Scale — 1:1,000 – 1:35,000
+      Meaning: Road closed to public vehicle use. Do not attempt.
+
+  [2] HIGH CLEARANCE 4WD  (OPER_MAINT_LEVEL 2)
+      Line — burnt orange (RGB 180,80,20)
+      Width — 0.7mm
+      Scale — 1:1,000 – 1:35,000
+      Meaning: Requires high clearance 4-wheel drive. Rocky or rutted.
+
+  [3] PASSENGER CAR OK  (OPER_MAINT_LEVEL 3)
+      Line — tan/khaki (RGB 140,100,40)
+      Width — 0.6mm
+      Scale — 1:1,000 – 1:50,000
+      Meaning: Graded dirt — passable in a standard passenger vehicle.
+
+  [4] MODERATE COMFORT  (OPER_MAINT_LEVEL 4)
+      Line — olive green (RGB 100,120,60)
+      Width — 0.5mm
+      Scale — 1:1,000 – 1:50,000
+      Meaning: Maintained gravel road — moderate driving comfort.
+
+  [5] HIGH COMFORT  (OPER_MAINT_LEVEL 5)
+      Line — olive green (RGB 100,120,60)
+      Width — 0.5mm
+      Scale — 1:1,000 – 1:50,000
+      Meaning: Fully maintained road — high comfort, often paved.
+
+  [6] USFS PAVED  (JURISDICTION FS + SURFACE_TYPE AC)
+      Line — dark brown (RGB 80,50,20)
+      Width — 0.7mm
+      Scale — 1:1,000 – 1:50,000
+      Meaning: Forest Service paved road — maintained, year-round access.
+
+  [7] USFS GRAVEL  (JURISDICTION FS + SURFACE_TYPE AGG)
+      Line — brown
+      Width — 0.7mm
+      Scale — 1:1,000 – 1:35,000
+      Meaning: Forest Service aggregate/gravel surface road.
+
+  [8] USFS NATIVE/DIRT  (JURISDICTION FS + SURFACE_TYPE NAT)
+      Line — brown
+      Width — variable
+      Scale — 1:1,000 – 1:25,000
+      Meaning: Forest Service native surface (dirt) — most primitive access.
+
+  [9] NOT MAINTAINED  (OPER_MAINT_LEVEL 0)
+      Line — brown
+      Width — variable
+      Scale — 1:1,000 – 1:25,000
+      Meaning: No maintenance — may be impassable, seasonal, or abandoned.
+
+  [10] ALL OTHERS
+       Scale — 1:1,000 – 1:35,000
+       Meaning: Backcountry roads not matching above rules.
+
+Labels:
+  Color: tan/brown (RGB 164,113,88)
+  Scale: field navigation and closer
+
+--- LOCAL ROADS ---
+Source: TIGER/Line — MTFCC codes S1400, S1640, S1730, S1740
+Style File: Local_Roads_Style.qml
+
+Symbol:
+  Line — light gray (RGB 160,160,160)
+  Width — 0.4mm (thinnest road line on map)
+  Casing — very thin dark line (RGB 35,35,35) at 0.26mm
+Scale Visibility: 1:1,000 – 1:50,000
+Labels:
+  Color: tan/brownish (RGB 164,113,88)
+  Scale: field navigation and closer
+
+Notes:
+  Residential streets, rural county roads, unimproved access roads.
+  Lowest priority in transport hierarchy.
+
+--- BLM TRAILS ---
+Source: BLM Trail Data — PLAN_ALLOW_MODE_TRNSPRT field
+Style File: BLM_Trails_CO_Style.qml
+
+4 rules:
+
+  [1] SHARED NON-MOTORIZED
+      Line — olive/yellow-green (RGB 180,160,40)
+      Width — 0.5mm  |  Scale — 1:1,000 – 1:50,000
+      Meaning: Open to all non-motorized users.
+
+  [2] HIKER + BIKE
+      Line — amber (RGB 220,140,0)
+      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
+      Meaning: Foot traffic and bicycles permitted.
+
+  [3] BIKE ONLY
+      Line — lime green (RGB 100,180,40)
+      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
+      Meaning: Bicycle use only — no hiking.
+
+  [4] ALL OTHERS
+      Line — bright orange (RGB 255,158,23)
+      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
+      Meaning: Other non-motorized designations.
+
+--- USFS TRAILS ---
+Source: USFS Trail Data — HIKER_PEDESTRIAN_ACCPT, BICYCLE_ACCPT, PACK_SADDLE_ACCPT fields
+Style File: USFS_Trails_CO_Style.qml
+
+5 rules:
+
+  [1] HIKER + BIKE
+      Line — amber (RGB 220,140,0)
+      Width — 0.7mm  |  Scale — 1:1,000 – 1:50,000
+      Meaning: Both hiking and biking accepted.
+
+  [2] HIKER ONLY
+      Line — burnt orange (RGB 200,80,20)
+      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
+      Meaning: Foot traffic only — no bikes.
+
+  [3] BIKE ONLY
+      Line — lime green (RGB 100,180,40)
+      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
+      Meaning: Bicycle use only.
+
+  [4] EQUESTRIAN
+      Line — (pack/saddle accepted field)
+      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
+      Meaning: Horse/pack animal use accepted.
+
+  [5] ALL OTHERS
+      Line — bright orange (RGB 255,158,23)
+      Width — 0.6mm  |  Scale — 1:1,000 – 1:50,000
+      Meaning: Other USFS trail designations.
+
+Notes (BLM + USFS Trails):
+  Both trail layers visible up to 1:50,000 (area planning scale).
+  Symbology fine-tuning still in progress — subject to revision.
+  Labels: pending configuration.
+
+================================================================================
+SECTION 2 — HYDROLOGY LAYERS
+================================================================================
+
+--- HYDRO LINES ---
+Source: NHD + DWR combined — HYDRO_TYPE and fcode fields
+Style File: CO_Hydro_Lines_Style.qml
+
+7 rules (all visible to 1:100,000 regional scale):
+
+  [1] PERENNIAL STREAM  (fcode 46006)
+      Line — dominant blue  (solid)
+      Width — 0.7mm
+      Scale — 1:1,000 – 1:100,000
+      Meaning: Permanently flowing water. Highest hydro priority.
+
+  [2] INTERMITTENT STREAM  (fcode 46003 / 46007)
+      Line — medium blue  (dashed)
+      Width — 0.5mm
+      Scale — 1:1,000 – 1:35,000 (field scale only)
+      Meaning: Flows seasonally — dry in late summer. May still show
+               surface water or substrate moisture for prospecting.
+
+  [3] CANAL / DITCH  (NHD_CANAL)
+      Line — blue tone  (distinct from streams)
+      Scale — 1:1,000 – 1:100,000
+      Meaning: Man-made irrigation or conveyance channel.
+
+  [4] PIPELINE  (NHD_PIPELINE)
+      Line — blue tone
+      Scale — 1:1,000 – 1:100,000
+      Meaning: Water pipeline — underground or surface conveyance.
+
+  [5] ARTIFICIAL PATH  (NHD_ARTIFICIAL)
+      Line — blue tone  (thin)
+      Scale — 1:1,000 – 1:100,000
+      Meaning: Centerline of reservoir, lake, or engineered waterway.
+               Used for network connectivity — not a physical channel.
+
+  [6] DWR DITCH  (DWR_DITCH)
+      Line — blue tone  (distinct style)
+      Scale — 1:1,000 – 1:100,000
+      Meaning: Colorado Division of Water Resources ditch data.
+               More detailed and locally accurate than NHD canals.
+
+  [7] NHD HISTORICAL  (NHD_HISTORICAL)
+      Line — blue-grey  (micro-dash, very faint)
+      Width — 0.5mm
+      Scale — 1:1,000 – 1:35,000 (field scale only)
+      Meaning: Historic stream channel — may be dry, diverted, or
+               buried. Relevant for placer prospecting context.
+
+Labels:
+  Curved placement along stream centerline
+  Color: blue
+  Halo: white/light
+  Scale: 1:1,000 – 1:250,000
+  Priority: higher for perennial, lower for intermittent/historical
+
+--- HYDRO POINTS ---
+Source: Colorado Division of Water Resources structures
+Style File: CO_Hydro_Points_Style.qml
+
+16 rules (point symbols):
+
+  Well               — symbol (hidden by default)
+  Well Field         — symbol (hidden by default)
+  Well Group         — symbol (hidden by default)
+  Spring             — VISIBLE — labeled at ~1:15,000
+  Seep               — VISIBLE — labeled at ~1:15,000
+  Reservoir          — symbol (hidden by default)
+  Reservoir System   — symbol (hidden by default)
+  Ditch              — symbol (hidden by default)
+  Ditch System       — symbol (hidden by default)
+  Stream Gage        — symbol (hidden by default)
+  Pump               — symbol (hidden by default)
+  Pipeline           — symbol (hidden by default)
+  Mine               — VISIBLE — temporary placeholder pending
+                       full MRDS_CO validation
+  Erosion Control Dam — symbol (hidden by default)
+  Livestock Tank     — symbol (hidden by default)
+  All Others         — symbol (hidden by default)
+
+Labels:
+  Scale: 1:1,000 – 1:100,000
+  Springs and Seeps labeled at close field scale (~1:15,000)
+  Mine points labeled at field scale
+
+Notes:
+  Hydro point mine data is a simplified derivative and does not
+  adequately represent historic tailings or full mining disturbance.
+  MRDS_CO is the primary mining intelligence layer.
+  Hydro point Mine features remain as temporary context only.
+
+--- HYDRO POLYGONS ---
+Source: NHD waterbodies
+Style File: CO_Hydro_Polygons_Style.qml / Trim version
+
+  Lakes, reservoirs, ponds — filled blue polygons
+  Rendered as area features — labeled at appropriate scale
+
+================================================================================
+SECTION 3 — MINING & PROSPECTING LAYERS
+================================================================================
+
+--- MRDS_CO — USGS MINERAL RESOURCE DATA SYSTEM (Colorado) ---
+Source: USGS MRDS — Colorado-clipped, category field computed
+Style File: MRDS_CO_category.qml
+CRS: EPSG:26913
+Scale Visibility: ALL rules 1:1,000 – 1:75,000 (field + area planning only)
+
+8 rules — Garmin-optimized symbology (high contrast, simple shapes):
+
+  [1] TIER 1 — ACTIVE MINE / HIGH-VALUE PROSPECT
+      Shape  — Star (4 or 5 point)
+      Color  — Gold (RGB 255,200,0)
+      Outline — near-black (RGB 30,30,30)
+      Size   — 4.0mm  (largest symbol on layer)
+      Meaning: Active producing mine OR high-confidence prospect with
+               known gold, silver, or multi-metal mineralization.
+               Priority target for field investigation.
+
+  [2] TIER 2 — PAST PRODUCER
+      Shape  — Circle
+      Color  — Orange (RGB 255,120,0)
+      Outline — near-black
+      Size   — 3.0mm
+      Meaning: Historic producing mine — ceased operations but indicates
+               confirmed mineralization. High prospecting value.
+
+  [3] TAILINGS
+      Shape  — Square
+      Color  — Brown (RGB 140,90,40)
+      Outline — near-black
+      Size   — 2.5mm
+      Meaning: Tailings deposit — mine waste pile from past processing.
+               May indicate nearby workings. Do not disturb (EPA).
+
+  [4] BASE METAL
+      Shape  — Circle
+      Color  — Teal (RGB 0,200,180)
+      Outline — near-black
+      Size   — 2.5mm
+      Meaning: Lead, zinc, copper, or other base metal occurrence.
+               Includes active, prospect, and other base metal sites.
+
+  [5] CRITICAL MINERAL
+      Shape  — Diamond
+      Color  — Purple (RGB 180,0,255)
+      Outline — near-black
+      Size   — 2.5mm
+      Meaning: Lithium, cobalt, rare earth elements, or other federally
+               designated critical minerals.
+
+  [6] GEMSTONE
+      Shape  — Diamond
+      Color  — Magenta/Hot Pink (RGB 230,0,120)
+      Outline — near-black
+      Size   — 2.5mm
+      Meaning: Gemstone occurrence — aquamarine, topaz, rhodochrosite,
+               turquoise, or other collectible minerals.
+
+  [7] URANIUM
+      Shape  — Triangle
+      Color  — Lime Green (RGB 80,200,0)
+      Outline — near-black
+      Size   — 2.5mm
+      Meaning: Uranium occurrence — Colorado Plateau / sedimentary hosted.
+               Informational only.
+
+  [8] UNCLASSIFIED
+      Shape  — Circle
+      Color  — Grey
+      Outline — near-black
+      Size   — 1.5mm  (smallest symbol on layer)
+      Meaning: Prospect, past producer, or active mine — commodity or
+               classification not determined from MRDS data.
+
+Labels:
+  NOT YET CONFIGURED — Tier 1 site name labels at close field scale
+  still pending. Next task in queue.
+
+IMPORTANT NOTE:
+  Industrial and noise categories (coal, construction aggregate, etc.)
+  have been deliberately excluded. This layer shows only prospects and
+  mines relevant to self-guided recreational prospecting.
+
+--- MINERAL REGIONS ---
+Source: Compiled Colorado mineral belt / prospecting region polygons
+Style File: MineralRegions_CO_Style.qml
+
+3 rules — polygon fill with purple border (RGB 141,90,153):
+
+  [1] MINERAL REGION — HIGH  (class = 3)
+      Fill  — Gold/Yellow (RGB 255,200,0)
+      Outline — purple-grey
+      Meaning: High mineral potential zone. Core of historic and active
+               district. Gold, silver, multi-metal expected.
+
+  [2] MINERAL REGION — MODERATE  (class = 2)
+      Fill  — Gold (slightly muted)
+      Outline — purple-grey
+      Meaning: Moderate mineral potential. District fringe or secondary
+               belt. Worth investigation in combination with MRDS sites.
+
+  [3] MINERAL REGION — LOW  (class = 1)
+      Fill  — Pale gold / faint yellow
+      Outline — purple-grey
+      Meaning: Low to peripheral mineral potential. Background context
+               only — do not rely on this as primary targeting layer.
+
+Scale Visibility: All scales (no restriction)
+Labels: Not enabled
+
+--- MINERAL SYSTEM INDICATORS ---
+Source: Compiled system-type indicators for Colorado mineral systems
+Style File: MineralSystem_Indicators_CO_Style.qml
+
+3 rules — point/polygon symbols:
+
+  [1] VOLCANIC SYSTEM INDICATOR
+      Color  — Bright Red (RGB 255,40,0)
+      Meaning: Volcanic-hosted mineralization indicator — epithermal
+               gold/silver systems, volcanic caldera margins.
+
+  [2] PLACER SYSTEM INDICATOR
+      Color  — Teal (RGB 0,210,190)
+      Meaning: Placer system indicator — alluvial/fluvial gold
+               concentration zones. Stream placer prospecting context.
+
+  [3] INTRUSIVE SYSTEM INDICATOR
+      Color  — Purple (RGB 200,0,255)
+      Meaning: Intrusive-hosted mineralization — porphyry copper/gold,
+               skarn, or contact metasomatic systems.
+
+Scale Visibility: All scales
+Labels: Not enabled
+
+================================================================================
+SECTION 4 — LAND OWNERSHIP / ACCESS LAYER
+================================================================================
+
+--- OWNERSHIP ---
+Source: Compiled Colorado land ownership — BLM, USFS, NPS, State, Private
+Style File: Ownership_CO_Style.qml
+CRS: EPSG:26913
+
+4 rules — polygon fills with labeling:
+
+  [1] PROHIBITED — NO COLLECTING / NO ENTRY
+      Fill  — Red (RGB 200,70,70)
+      Outline — dark red (RGB 140,30,30)
+      Covers: National Parks (NPS), designated Wilderness Areas,
+              Wilderness Study Areas (WSA), Private land
+      Meaning: Prospecting and rock collecting strictly prohibited.
+               No entry without authorization. Fines and criminal
+               penalties apply in NPS and Wilderness.
+
+  [2] VERIFY — CHECK RULES BEFORE ENTRY
+      Fill  — Gold/Amber (RGB 220,180,60)
+      Outline — dark gold (RGB 160,120,20)
+      Covers: State land (SLB), Colorado Parks & Wildlife (CPW),
+              Areas of Critical Environmental Concern (ACEC)
+      Meaning: Entry and collecting may be restricted or require permit.
+               Always verify current rules with managing agency before
+               prospecting. Rules vary by parcel.
+
+  [3] OPEN — PROSPECTING GENERALLY PERMITTED
+      Fill  — Green (RGB 100,180,100)
+      Outline — dark green (RGB 60,120,60)
+      Covers: BLM General Use land, USFS General Forest land
+      Meaning: Recreational prospecting and collecting generally allowed
+               under standard rules (personal use quantities,
+               no mechanized excavation without permit, no sale).
+               Verify no special closures before visiting.
+
+  [4] UNKNOWN — VERIFY BEFORE ENTRY
+      Fill  — Lavender/Grey-Purple (RGB 180,160,200)
+      Outline — grey-purple
+      Meaning: Ownership not determined or data gap. Do not assume
+               access is permitted. Verify parcel ownership before
+               entering or collecting.
+
+Scale Visibility: All scales
+Labels: Ownership category shown at region scale
+Pending: Final overlay usability pass
+
+================================================================================
+SECTION 5 — GEOLOGY LAYERS
+================================================================================
+
+--- GEOLOGY — BEDROCK ---
+Source: USGS / CGS Colorado Bedrock Geology
+Style File: Geology_CO_Bedrock_Style.qml
+CRS: EPSG:26913
+
+5 categories — polygon fills:
+
+  [1] PRECAMBRIAN  (Archean-Proterozoic)
+      Fill  — Teal/Aqua (RGB 80,208,199)
+      Meaning: Ancient basement rocks — metamorphic and igneous.
+               Colorado Front Range core. Host for many lode deposits.
+
+  [2] PALEOZOIC
+      Fill  — Yellow (RGB 233,226,93)
+      Meaning: Sedimentary sequence — limestones, sandstones, shales.
+               Carbonate-hosted mineralization possible (skarn, MVT).
+
+  [3] MESOZOIC
+      Fill  — Muted Red (RGB 207,81,87)
+      Meaning: Jurassic/Cretaceous sediments — Morrison Formation,
+               Dakota Sandstone. Uranium-vanadium host in Colorado Plateau.
+
+  [4] CENOZOIC
+      Fill  — Lime Green (RGB 76,229,68)
+      Meaning: Tertiary volcanics, intrusions, and valley fill.
+               San Juan volcanic field — epithermal gold/silver.
+               Includes Oligocene porphyry systems.
+
+  [5] OTHER / UNKNOWN
+      Fill  — default/grey
+      Meaning: Undifferentiated or data gap.
+
+Scale Visibility: 1:1,000 – 1:500,000
+Labels: Not enabled
+Pending: Final overlay usability pass
+
+--- GEOLOGY — VOLCANIC EXTRUSIVE ---
+Source: Colorado Volcanic Geology — extrusive units
+Style File: Geology_CO_Volc_Extrusive_Style.qml
+
+  Covers: Lava flows, tuffs, ash deposits, caldera fill
+  Symbology: Distinct from bedrock — volcanic-specific color scheme
+  Relevance: Epithermal gold/silver systems hosted in volcanic sequence.
+             San Juan volcanic field — primary epithermal target zone.
+
+Scale Visibility: Active
+Labels: Not enabled
+
+--- GEOLOGY — VOLCANIC INTRUSIVE ---
+Source: Colorado Volcanic Geology — intrusive units
+Style File: Geology_CO_Volc_Intrusive_Style.qml
+
+  Covers: Stocks, dikes, sills, laccoliths, plutons
+  Symbology: Distinct from extrusive — intrusive-specific
+  Relevance: Porphyry copper/gold, skarn, and contact metasomatic
+             systems associated with intrusive bodies. High-value
+             target when intersecting fault/fracture zones.
+
+Scale Visibility: Active
+Labels: Not enabled
+
+================================================================================
+SECTION 6 — TERRAIN & BASE LAYERS
+================================================================================
+
+--- HILLSHADE ---
+Source: Colorado DEM — shaded relief
+Style File: CO_Hillshade_Style.qml
+
+  Rendering: Grayscale hillshade — blended beneath all feature layers
+  Purpose: Terrain context — ridge lines, drainages, canyon walls,
+           slope aspect visible through transparent overlays
+  Blend mode: Multiply or screen blend with overlays
+  Scale: All scales
+  Pending: Final blend balance verification
+
+--- CONTOURS — 50m ---
+Source: Colorado DEM-derived 50m contour intervals
+Style File: CO_Contour_50m_Style.qml
+
+  Line — thin khaki/tan (RGB 200,160,100)
+  Width — 0.2mm (very fine)
+  Interval: 50 meters
+  Purpose: Fine-scale terrain reading at field and close scales
+  Scale: Active at field + close scales
+
+--- CONTOURS — 100m ---
+Source: Colorado DEM-derived 100m contour intervals
+Style File: CO_Contours_100m_Style.qml
+
+  Line — tan/khaki, slightly heavier than 50m
+  Interval: 100 meters (index contours)
+  Purpose: Regional terrain reading — ridge, valley, slope patterns
+  Scale: Active at regional and area planning scales
+
+--- NLCD 2021 — LAND COVER ---
+Source: USGS National Land Cover Database 2021
+Style File: NLCD_2021_Style.qml
+
+  Raster — standard NLCD color scheme
+  Classes: Developed, Forest, Shrubland, Grassland, Barren,
+           Wetland, Agriculture, Water
+  Purpose: Land cover context — vegetation type and density,
+           barren/exposed ground (prospecting access indicator)
+  Scale: Active at appropriate scales
+
+================================================================================
+SECTION 7 — POINT FEATURES
+================================================================================
+
+--- BLM GATES ---
+Source: BLM gate/barrier dataset — Colorado
+Style File: BLM_Gates_CO_Style.qml
+
+  Symbol — point marker (gate icon or styled point)
+  Color  — tan/gold (RGB 229,182,54) with darker outline
+  Purpose: Shows BLM road gates that may be locked seasonally.
+           Critical for route planning — a locked gate prevents
+           vehicle access even on open BLM land.
+  Scale: Active at field and close scales
+
+--- HOT ZONES ---
+Source: Custom compiled prospecting hot zone polygons
+Style File: HotZones_CO_Style.qml
+
+  Polygon fills — high-contrast colors (site-specific)
+  Purpose: Custom-defined high-interest prospecting areas based
+           on multi-layer convergence analysis — MRDS density,
+           Mineral Region class, geology type, and access.
+  Scale: Active
+  Labels: Site-specific name labels
+
+================================================================================
+SECTION 8 — LAYER RENDERING ORDER (bottom to top)
+================================================================================
+
+  1.  Hillshade (terrain base)
+  2.  NLCD 2021 Land Cover (semi-transparent)
+  3.  Geology — Bedrock (overlay, semi-transparent)
+  4.  Geology — Volcanic Extrusive (overlay)
+  5.  Geology — Volcanic Intrusive (overlay)
+  6.  Contours 100m
+  7.  Contours 50m
+  8.  Hydro Polygons (lakes, reservoirs)
+  9.  Ownership (semi-transparent fill)
+  10. Mineral Regions
+  11. Mineral System Indicators
+  12. Hot Zones
+  13. Hydro Lines (streams, ditches, canals)
+  14. Local Roads
+  15. Collectors
+  16. Minor Arterials
+  17. Major Roads
+  18. Backcountry Roads
+  19. BLM Trails
+  20. USFS Trails
+  21. Highways (top transport layer)
+  22. Hydro Points (springs, seeps, mines)
+  23. BLM Gates
+  24. MRDS_CO Prospecting Sites (topmost feature layer)
+
+================================================================================
+SECTION 9 — SCALE VISIBILITY QUICK REFERENCE
+================================================================================
+
+  SCALE           LAYERS VISIBLE
+  ---------------------------------------------------------------------------
+  1:500,000+      Highways, Mineral Regions, Geology Bedrock, Hillshade,
+  (Statewide)     Ownership, System Indicators, NLCD
+
+  1:200,000       + Major Roads labels, Arterial labels
+
+  1:100,000       + Hydro Lines (perennial, intermittent),
+  (Regional)        Hydro Point labels, Contours 100m
+
+  1:75,000        + MRDS_CO Prospecting Sites appear
+  (Area Planning)   + Major Roads (lines become visible)
+
+  1:50,000        + Minor Arterials, Collectors, Local Roads,
+                    BLM/USFS Trails, Contours 50m
+
+  1:35,000        + Backcountry Roads (most classes),
+                    NHD Historical streams, Intermittent streams
+
+  1:25,000        + USFS Native/Dirt roads, Not Maintained roads
+  (Field Nav)
+
+  1:15,000        + Spring/Seep labels on Hydro Points
+  (Close scale)
+
+  1:1,000         All active layers at full detail
+  (Site detail)
+
+================================================================================
+SECTION 10 — PROSPECTING ACCESS DECISION TREE
+================================================================================
+
+  Step 1 — Check OWNERSHIP layer color at target location:
+           RED    = Stop. Prohibited. Do not enter for collecting.
+           GOLD   = Verify with agency before going.
+           GREEN  = Generally open — confirm no special closures.
+           PURPLE = Unknown — verify parcel ownership first.
+
+  Step 2 — Check MRDS_CO sites in area:
+           Gold Star (4mm)  = Tier 1 priority — investigate
+           Orange circle    = Past producer — confirmed mineralization
+           Teal/Purple/etc. = Secondary targets by commodity
+
+  Step 3 — Check MINERAL REGIONS overlay:
+           Gold fill = High/moderate potential zone confirmation
+
+  Step 4 — Check GEOLOGY overlay:
+           Cenozoic (green) + Intrusive (purple) = Epithermal/Porphyry context
+           Precambrian (teal) = Lode district basement context
+           Mesozoic (red) = Uranium-vanadium sedimentary context
+
+  Step 5 — Plan ROUTE using transport hierarchy:
+           Highway → Major Road → Backcountry Road (OML 3+) → 4WD/Trail
+           Avoid Closed (red) roads entirely.
+           Check BLM Gates — may be seasonally locked.
+
+================================================================================
+END OF MAP LEGEND & USER GUIDE
+Bedrock Sentinel — Colorado Prospecting Navigation Map
+Build Status: CARTOGRAPHIC LOCK PENDING
+Export Pipeline: PAUSED until lock declared
+================================================================================
