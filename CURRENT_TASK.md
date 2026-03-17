@@ -41,7 +41,8 @@ Recent confirmed fixes:
 - Arterial width reduction completed
 - Major Roads scale restricted to 1:75,000 — no longer visible at statewide zoom
 - Major Roads width reduced 0.9mm → 0.55mm — subordinate to Highways
-- Backcountry road priority scale tuning completed
+- Backcountry Roads style rebuilt — 10 rules → 6, surface-type organizer, tiered scale visibility
+  Paved+Gravel at 1:50k; Dirt/Native+Primitive+Others at 1:30k; CLOSED unchanged
 - Hydro temporal hierarchy styling finalized
 - Historical stream visibility restricted to field scale
 - Perennial stream labeling system finalized (curved placement + halo + priority tuning)
