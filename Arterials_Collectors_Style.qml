@@ -146,7 +146,7 @@
   </elevation>
   <renderer-v2 type="RuleRenderer" referencescale="-1" enableorderby="0" forceraster="0" symbollevels="0">
     <rules key="{e6678286-10bb-43e3-a454-390f291fd78b}">
-      <rule symbol="0" label="Major Roads" key="{f352612a-78f0-418d-9ca8-2139aa9191e3}" filter="&quot;funcclassi&quot; LIKE '2%' OR &quot;funcclassi&quot; LIKE '3%'"/>
+      <rule symbol="0" scalemaxdenom="75000" scalemindenom="1000" label="Major Roads" key="{f352612a-78f0-418d-9ca8-2139aa9191e3}" filter="&quot;funcclassi&quot; LIKE '2%' OR &quot;funcclassi&quot; LIKE '3%'"/>
       <rule symbol="1" scalemaxdenom="50000" scalemindenom="1000" label="Minor Arterial" key="{c8bc6e5d-15e2-42d1-9297-e891b9d3b7cf}" filter="&quot;funcclassi&quot; LIKE '4%'"/>
       <rule symbol="2" scalemaxdenom="35000" scalemindenom="1000" label="Collectors" key="{87988eb7-f081-42b9-8a0e-2da7b1b39f49}" filter=" &quot;funcclassi&quot; LIKE '5%' OR &quot;funcclassi&quot; LIKE '6%'"/>
     </rules>
@@ -173,7 +173,7 @@
             <Option type="QString" value="bevel" name="joinstyle"/>
             <Option type="QString" value="80,80,80,255,rgb:0.3137255,0.3137255,0.3137255,1" name="line_color"/>
             <Option type="QString" value="solid" name="line_style"/>
-            <Option type="QString" value="0.9" name="line_width"/>
+            <Option type="QString" value="0.55" name="line_width"/>
             <Option type="QString" value="MM" name="line_width_unit"/>
             <Option type="QString" value="0" name="offset"/>
             <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
